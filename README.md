@@ -14,3 +14,5 @@
 
 **Tecnologías utilizadas**: JSP, Servlet, API Google Maps (proximamente),...
 
+Descargar BD: https://drive.google.com/folderview?id=0B_eEqy0vsqzfSG5hMlZHcE1hT28&usp=sharing
+
