@@ -1,0 +1,61 @@
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+a{
+  margin: 20px 0px;
+  font-size: 15px;
+}
+/*.container {
+border: 1px solid #B22222;
+border-radius: 10px;
+margin-top: 15px;
+margin-bottom: 15px;
+}*/
+
+
+
+h2 {
+  font-family: "Verdana";
+  font-size: 25px;
+}
+.form-signiup {
+  max-width: 400px;
+  padding: 10px;
+  margin: 0 auto;
+}
+.form-signiup .form-signiup-heading,
+.form-signiup .checkbox {
+  margin-bottom: 10px;
+}
+.form-signiup .checkbox {
+  font-weight: normal;
+  font-size: 20px;}
+.form-signup .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 15px;
+  font-size: 16px;
+  /* Put margin top and bottom */ 
+  margin: 25px 0px;
+}
+
+.form-signiup .form-control:focus {
+  z-index: 2;
+}
+.form-signiup input[type="form"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+/*.form-signin input[type=""] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+} */ 
+
