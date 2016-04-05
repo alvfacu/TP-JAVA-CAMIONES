@@ -8,13 +8,9 @@ import java.sql.SQLException;
 import capaEntidades.Demora;
 import connection.ConexionBD;
 
-public class CatalogoDemora {
+public class DemoraAdaptador {
 	
-<<<<<<< HEAD
-	//comentss
-=======
 	
->>>>>>> 3a27ab4b3805fbaa38e403c7b0d13fc1fbce83b6
 	
 	
 	
