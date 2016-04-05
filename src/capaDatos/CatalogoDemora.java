@@ -10,11 +10,7 @@ import connection.ConexionBD;
 
 public class CatalogoDemora {
 	
-<<<<<<< HEAD
-	//comentss
-=======
-	
->>>>>>> 3a27ab4b3805fbaa38e403c7b0d13fc1fbce83b6
+
 	
 	
 	
