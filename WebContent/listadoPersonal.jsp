@@ -57,13 +57,13 @@
     
 <div class="container">
 <h2>Camiones ~<small>&nbsp &nbsp &nbsp &nbsp &nbsp Listado de Camiones</small></h2>    
-    <% ArrayList<Camion> camiones = new ControladorCamion().dameTodo();%>
+    <% ArrayList<Personal> personales = new ControladorPersonal.dameTodo();%>
 
 <table class="table table-hover table-responsive table-bordered" >
  <tr class="active" style="font-weight: bold;">
-    <td> Patente </td>
-    <td> Marca </td>
-    <td> Modelo </td>
+    <td> DNI </td>
+    <td> Nombre </td>
+    <td> Apellido </td>
     <td> Descripcion </td>
     <td> Km Recorridos desde Mantenimiento </td>
     <td> Km Recorridos en viaje (kg) </td>
@@ -71,13 +71,13 @@
  </tr>
  <% for(int i=0; i<camiones.size();i++) { %>
   <tr>
-        <td align="center"> <%= camiones.get(i).getPatente() %> </td>
-        <td align="center"> <%= camiones.get(i).getMarca() %> </td>
-        <td align="center"> <%= camiones.get(i).getModelo() %> </td>
-        <td align="center"> <%= camiones.get(i).getDescripcion() %> </td>
-        <td align="center"> <%= camiones.get(i).getKmRecorridosDesdeMantenimiento() %> </td>
-        <td align="center"> <%= camiones.get(i).getKmRecorridosEnViaje() %> </td>
-        <td align="center"> <%= camiones.get(i).getEstado().toString() %> </td>
+        <td align="center"> <%= personales.get(i).getPatente() %> </td>
+        <td align="center"> <%= personales.get(i).getNombre() %> </td>
+        <td align="center"> <%= personales.get(i).getApellido() %> </td>
+        <td align="center"> <%= personales.get(i).getDescripcion() %> </td>
+        <td align="center"> <%= personales.get(i).getKmRecorridosDesdeMantenimiento() %> </td>
+        <td align="center"> <%= personales.get(i).getKmRecorridosEnViaje() %> </td>
+        <td align="center"> <%= personales.get(i).getEstado().toString() %> </td>
   </tr>
  <% } %> 
 </table>
@@ -91,5 +91,3 @@
     <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
-
-

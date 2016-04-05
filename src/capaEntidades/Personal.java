@@ -1,5 +1,7 @@
 package capaEntidades;
 
+
+
 public class Personal {
 
 	public enum Tipo{
@@ -90,6 +92,27 @@ public class Personal {
 		this.tipo = tipo;
 	}	
 	
+	public Tipo dameNombreTipo(String tipo) {
+		if(Tipo.Administrador.toString().compareToIgnoreCase(tipo) == 0)
+		{
+			return Tipo.Administrador;
+		}
+		else if(Tipo.Camionero.toString().compareToIgnoreCase(tipo) == 0)
+		{
+			return Tipo.Camionero;
+		}
+		else if(Tipo.Operador.toString().compareToIgnoreCase(tipo) == 0)
+		{
+			return Tipo.Camionero;
+		}
+		else
+		{
+			return null;
+		}	
+	}
+	
+	
+	
 	public Personal() {
 		// TODO Auto-generated constructor stub
 	}
@@ -107,5 +130,7 @@ public class Personal {
 		this.disponibilidad = disponibilidad;
 		this.tipo = tipo;
 	}
+
+	
 	
 }

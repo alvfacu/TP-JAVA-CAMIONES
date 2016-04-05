@@ -8,20 +8,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import capaEntidades.Personal;
-import capaNegocio.Controlador;
+import capaEntidades.Camion;
+import capaNegocio.ControladorCamion;
 
 /**
- * Servlet implementation class Loggin
+ * Servlet implementation class AltaUsuario
  */
-@WebServlet("/Loggin")
-public class Loggin extends HttpServlet {
+@WebServlet("/AltaCamion")
+public class AltaCamion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public Loggin() {
+    public AltaCamion() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -29,20 +30,21 @@ public class Loggin extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request,response);
+		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String usuario = request.getParameter("user");
-		String password = request.getParameter("pass");
-		Personal pe = new Personal();
-		Controlador c = new Controlador();
-		pe = c.validarUsuario(usuario,password);
-		if(pe.getNombre()==null) {request.getRequestDispatcher("error.html").forward(request,response);}
-		else {request.getRequestDispatcher("exito.html").forward(request,response);};
+		String patente = request.getParameter("patente");
+		String marca = request.getParameter("marca");
+		String modelo = request.getParameter("modelo");
+		String descripcion = request.getParameter("descripcion");
+		String estado = request.getParameter("estado");
+		Camion ca = new Camion(patente, marca, modelo, descripcion);
+		new ControladorCamion().agregarCamion(ca);
+
 	}
 
 }

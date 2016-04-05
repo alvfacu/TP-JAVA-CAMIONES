@@ -89,6 +89,8 @@ public class Camion {
 		// TODO Auto-generated constructor stub
 	}
 	
+
+
 	//Devuelve el tipo de Estado en base al estado con el que se encuentra registrado en la BD (pasamos string a enum Estado)
 	public Estado dameNombreEstado(String estado)
 	{		
@@ -112,6 +114,18 @@ public class Camion {
 		{
 			return null;
 		}
+	}
+	
+	//Probando tomar datos
+	public Camion(String patente2, String marca2, String modelo2,
+			String descripcion2) {
+		this.patente=patente2;
+		this.marca=marca2;
+		this.modelo=modelo2;
+		this.descripcion=descripcion2;
+		this.kmRecorridosDesdeMantenimiento=0;
+		this.kmRecorridosEnViaje=10;
+		this.estado=Estado.Disponible;
 	}
 	
 }
