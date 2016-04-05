@@ -56,7 +56,7 @@
 
     
 <div class="container">
-<h2>Camiones ~<small>&nbsp &nbsp &nbsp &nbsp &nbsp Listado de Camiones</small></h2>    
+<h2>Camiones ~<small>                              Listado de Camiones</small></h2>    
     <% ArrayList<Camion> camiones = new ControladorCamion().dameTodo();%>
 
 <table class="table table-hover table-responsive table-bordered" >

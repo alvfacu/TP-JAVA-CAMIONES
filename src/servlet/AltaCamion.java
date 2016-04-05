@@ -41,7 +41,6 @@ public class AltaCamion extends HttpServlet {
 		String marca = request.getParameter("marca");
 		String modelo = request.getParameter("modelo");
 		String descripcion = request.getParameter("descripcion");
-		String estado = request.getParameter("estado");
 		Camion ca = new Camion(patente, marca, modelo, descripcion);
 		new ControladorCamion().agregarCamion(ca);
 
