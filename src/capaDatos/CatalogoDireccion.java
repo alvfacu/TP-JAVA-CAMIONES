@@ -247,14 +247,14 @@ public class CatalogoDireccion extends Catalogo{
 		return dir;
 	}
 
-	public void eliminarDireccion(Direccion dir)
+	public void eliminarDireccion(int id)
 	{
 		String sql = "DELETE FROM direcciones WHERE idDireccion = ?";
 		
 		try
 		{
 			AbrirConexion(sql);
-			sentencia.setInt(1, dir.getIdDireccion());
+			sentencia.setInt(1, id);
 			sentencia.executeUpdate();
 		} 
 		catch (SQLException e) 

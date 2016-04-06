@@ -39,9 +39,9 @@ public class ControladorDireccion {
 		direccionDatos.modificarDireccion(dir);
 	}
 	
-	public void eliminarDireccion(Direccion dir)
+	public void eliminarDireccion(int id)
 	{
-		direccionDatos.eliminarDireccion(dir);
+		direccionDatos.eliminarDireccion(id);
 	}
 	
 }

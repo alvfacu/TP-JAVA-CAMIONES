@@ -45,4 +45,35 @@ public class CatalogoLocalidad extends Catalogo {
 		
 		return localidades;
 	}
+
+	public Localidad dameUno(int id) {
+		
+		Localidad loc = null;
+		String sql = "SELECT * FROM localidades loc INNER JOIN provincias prov ON loc.idProvincia = prov.idProvincia WHERE loc.idProvincia = ?";
+		ResultSet rs = null;
+				
+		try
+		{
+			AbrirConexion(sql);
+			sentencia.setInt(1, id);
+			rs = sentencia.executeQuery();			
+			
+			if(rs.next())
+			{
+				Provincia prov = new Provincia(rs.getInt("idProvincia"),rs.getString("nombreProvincia"));
+				loc = new Localidad(rs.getInt("idLocalidad"), rs.getInt(rs.getInt("cp")), rs.getString("nombreLocalidad"), prov);				
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally
+		{
+			CerrarConexion();
+		}
+		
+		// TODO Auto-generated method stub
+		return loc;
+	}
 }

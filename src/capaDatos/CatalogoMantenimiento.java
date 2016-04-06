@@ -33,7 +33,5 @@ public class CatalogoMantenimiento extends Catalogo {
 		}	
 		
 	}
-
-	
-	
+		
 }

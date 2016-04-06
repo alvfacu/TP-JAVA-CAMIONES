@@ -65,6 +65,10 @@ public class Direccion {
 		this.piso = piso;
 		this.letra = depto;
 		this.localidad = loc;
+	}
+
+	public Direccion() {
+		// TODO Auto-generated constructor stub
 	}	
 
 }
