@@ -65,6 +65,24 @@ public class Direccion {
 		this.piso = piso;
 		this.letra = depto;
 		this.localidad = loc;
+	}
+
+	public Direccion(String calle, int nro, Localidad loc) {
+		this.calle = calle;
+		this.nro = nro;
+		this.localidad = loc;
+	}
+	
+	public Direccion() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Direccion(String calle, int nro, int piso, char depto, Localidad loc) {
+		this.calle = calle;
+		this.nro = nro;
+		this.piso = piso;
+		this.letra = depto;
+		this.localidad = loc;
 	}	
 
 }
