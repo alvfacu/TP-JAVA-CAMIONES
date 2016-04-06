@@ -29,5 +29,5 @@ public class ControladorCamion {
 		camionDatos.agregarCamion(c);
 	}
 
-
+//Faltan los metodos de eliminar y modificar
 }

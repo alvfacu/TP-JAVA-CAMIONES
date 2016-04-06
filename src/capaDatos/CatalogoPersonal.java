@@ -128,7 +128,9 @@ public class CatalogoPersonal extends Catalogo {
 		
 	}
 
-	public ArrayList<Personal> dameTodos(){
+	//Trae todo el Personal registrado en la BD
+	
+	public ArrayList<Personal> dameTodo(){
 		
 		ArrayList<Personal> personales =null;
 		
@@ -153,7 +155,7 @@ public class CatalogoPersonal extends Catalogo {
 				pe.setDireccion(rs.getString("direccion"));
 				pe.setUsuario(rs.getString("usuario"));
 				pe.setPassword(rs.getString("password"));
-				// pe.setDisponibilidad(rs.getDisponibilidad.("disponibilidad"));
+				pe.setDisponibilidad(rs.getBoolean("disponibilidad"));
 				String tipo = rs.getString("tipo");
 				pe.setTipo(new Personal().dameNombreTipo(tipo));				
 				personales.add(pe);
@@ -172,7 +174,9 @@ public class CatalogoPersonal extends Catalogo {
 		
 	
 	}
-	/*
+	
+	//Hay que ver como se maneja cuando no encuentra ninguno. 
+	
 	public  Personal dameUno(String dni){
 		Personal p =null;
 		String sql = "SELECT * FROM personal WHERE dni like ?";
@@ -194,7 +198,7 @@ public class CatalogoPersonal extends Catalogo {
 			p.setDireccion(rs.getString("direccion"));
 			p.setUsuario(rs.getString("usuario"));
 			p.setPassword(rs.getString("password"));
-			//p.setDisponibilidad()
+			p.setDisponibilidad(rs.getBoolean("Disponibilidad"));
 			p.setTipo(new Personal().dameNombreTipo(rs.getString("tipo")));			
 		}					
 	} 
@@ -207,8 +211,72 @@ public class CatalogoPersonal extends Catalogo {
 		CerrarConexion();			
 	}	
 	
-	return camion;
-	}*/
-	
+	return p;
+	}
+
+	public void modificarPersonal(Personal p){
+		
+		String sql = "UPDATE Personal SET nombre=?, apellido=?, telefono=?,direccion=?,usuario=?,password=?,tipo=?,disponibilidad=? WHERE dni=?";
+		
+		try
+		{	
+			//Valido la existencia del Personal en la BD, si existe, lo modifico.
+			
+			boolean rta = validarExistencia(p);
+			if (rta==true){
+				AbrirConexion(sql);
+				sentencia.setString(1, p.getDni());
+				sentencia.setString(2, p.getNombre());
+				sentencia.setString(3, p.getApellido());
+				sentencia.setInt(4, p.getTelefono());
+				sentencia.setString(5, p.getDireccion());
+				sentencia.setString(6, p.getUsuario());
+				sentencia.setString(7, p.getPassword());
+				sentencia.setString(8,	p.getTipo().toString());
+				if(p.isDisponibilidad())
+				{
+					sentencia.setBoolean(9, true);
+					}
+				else 
+				{
+					sentencia.setBoolean(9, false);
+				}
+				sentencia.execute(); 
+			}} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			CerrarConexion();			
+		}	
+	}
+		
+	public void eliminarPersonal(Personal p){
+		
+		
+		{
+			String sql = "DELETE FROM personal WHERE dni like ?";
+			
+			try
+			{	//Elimino si existe en la BD
+				boolean rta = validarExistencia(p);
+				if (rta==true){
+				AbrirConexion(sql);
+				sentencia.setString(1, p.getDni());
+				sentencia.executeUpdate();								
+			} }
+			catch (SQLException e) 
+			{		
+				e.printStackTrace();
+			}	
+			finally
+			{
+				CerrarConexion();			
+			}
+		}
+		
+		
+	}	
 }
-	

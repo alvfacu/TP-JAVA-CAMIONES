@@ -24,7 +24,7 @@ public class Ejecuta {
 		 Tipo tipo= Tipo.Administrador;
 		Personal p = new Personal(dni,nombre,apellido,telefono,direccion,usuario,password, disponibilidad,tipo);
 		ControladorPersonal cp = new ControladorPersonal();
-		cp.agregarPersonal(p);
+		cp.eliminarPersonal(p);
 	}
 
 }

@@ -139,7 +139,7 @@ public class CatalogoCamion extends Catalogo {
 	
 	public void eliminarCamion(String patente)
 	{
-		String sql = "DELETE camiones WHERE patente like ?";
+		String sql = "DELETE FROM camiones WHERE patente like ?";
 		
 		try
 		{			
