@@ -1,7 +1,11 @@
 package capaNegocio;
 
-import capaEntidades.Personal;
-import capaEntidades.Personal.Tipo;
+import java.util.Calendar;
+
+import capaEntidades.Camion;
+import capaEntidades.Mantenimiento;
+import capaEntidades.Mantenimiento.Tipo;
+
 
 public class Ejecuta {
 	
@@ -13,7 +17,7 @@ public class Ejecuta {
 		// Controlador.cargaCiudad();
 	//	 Controlador.cargaPersonal();
 			//Controlador.modificaDemora();
-		 String dni="37999000";
+	/*	 String dni="37999000";
 		 String nombre="mariano";
 		 String apellido="roberto";
 		 int telefono=42123;
@@ -25,6 +29,33 @@ public class Ejecuta {
 		Personal p = new Personal(dni,nombre,apellido,telefono,direccion,usuario,password, disponibilidad,tipo);
 		ControladorPersonal cp = new ControladorPersonal();
 		cp.eliminarPersonal(p);
+*/	
+		
+	/* Calendar calendario = Calendar.getInstance();
+	calendario.set(2015, 02, 24, 03, 02, 24);
+	System.out.print(calendario.get(2));*/ 
+		
+		ControladorCamion cc = new ControladorCamion();
+		Camion ca = new Camion();
+		ca = cc.dameUno("HIV800");
+		
+		ControladorMantenimiento cm = new ControladorMantenimiento();
+		Calendar fechaHM = Calendar.getInstance();
+		fechaHM.set(2016,02,01,21,02,21);
+		Calendar fechaHE = Calendar.getInstance();
+		fechaHE.set(2016,02,01,19,02,21);		
+		Calendar fechaHI = Calendar.getInstance();
+		fechaHI.set(2016,02,01,18,02,21);
+		Tipo tipo = Mantenimiento.Tipo.Arreglo_General;
+		Double kmIn = 900.00;
+		Double kmE = 1000.00;
+
+		
+		Mantenimiento man = new Mantenimiento(fechaHM,fechaHI,fechaHE,tipo,kmIn,kmE,ca);
+		cm.agregarMantenimiento(man);
+		
+	
+	
 	}
 
 }

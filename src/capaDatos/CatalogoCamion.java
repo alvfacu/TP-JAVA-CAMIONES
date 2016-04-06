@@ -122,7 +122,8 @@ public class CatalogoCamion extends Catalogo {
 			sentencia.setString(3, camion.getDescripcion());
 			sentencia.setDouble(4, camion.getKmRecorridosDesdeMantenimiento());
 			sentencia.setDouble(5, camion.getKmRecorridosEnViaje());
-			sentencia.setString(6, camion.getEstado().toString());			
+			sentencia.setString(6, camion.getEstado().toString());
+			
 			sentencia.setString(7, camion.getPatente());
 			sentencia.executeUpdate();			
 		} 

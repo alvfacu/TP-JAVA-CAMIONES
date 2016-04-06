@@ -1,5 +1,7 @@
 package capaEntidades;
 
+import java.util.ArrayList;
+
 public class Camion {
 
 	public enum Estado{
@@ -16,6 +18,15 @@ public class Camion {
 	private double kmRecorridosDesdeMantenimiento;
 	private double kmRecorridosEnViaje;
 	private Estado estado;
+	private ArrayList<Mantenimiento> mantenimientos;
+	
+	public ArrayList<Mantenimiento> getMantenimientos() {
+		return mantenimientos;
+	}
+
+	public void setMantenimientos(ArrayList<Mantenimiento> mantenimientos) {
+		this.mantenimientos = mantenimientos;
+	}
 	
 	public String getPatente() {
 		return patente;
