@@ -37,13 +37,30 @@ public class AltaCamion extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String patente = request.getParameter("patente");
-		String marca = request.getParameter("marca");
-		String modelo = request.getParameter("modelo");
-		String descripcion = request.getParameter("descripcion");
-		Camion ca = new Camion(patente, marca, modelo, descripcion);
-		new ControladorCamion().agregarCamion(ca);
+		try
+		{
+			String patente = request.getParameter("patente");
+			String marca = request.getParameter("marca");
+			String modelo = request.getParameter("modelo");
+			String descripcion = request.getParameter("descripcion");
+			double kmi = CambiarComaPorPunto(request.getParameter("kmRecorridosEnViaje"));	
+			Camion.Estado est = new Camion().dameNombreEstado(request.getParameter("estado"));
+			Camion ca = new Camion(patente, marca, modelo, descripcion, kmi,0,est);
+			new ControladorCamion().agregarCamion(ca);
+		}
+		catch(Exception ex)
+		{
+			response.sendRedirect("error.html");
+		}		
+        response.sendRedirect("exito.html");
+	}
 
+	private double CambiarComaPorPunto(String km) {
+		if(km.contains(","))
+		{
+			km = km.replace(",",".");
+		}
+		return Double.valueOf(km);
 	}
 
 }

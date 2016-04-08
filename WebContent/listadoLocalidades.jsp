@@ -11,7 +11,7 @@
 <body>
 	<h1 style="font-style: 2 ;color: blue;">LISTADO</h1>
 	
-	<% ArrayList<Localidad> localidades = new LocalidadNegocio().dameTodo();%>
+	<% ArrayList<Localidad> localidades = new ControladorLocalidad().dameTodo();%>
 
 <table border="1" bordercolor="Blue" id="contenido">
  <tr style="font-weight: bold;">
