@@ -29,5 +29,18 @@ public class ControladorCamion {
 		camionDatos.agregarCamion(c);
 	}
 
-//Faltan los metodos de eliminar y modificar
+	public boolean existePatente(String patente) {
+		// TODO Auto-generated method stub
+		return camionDatos.existePatente(patente);
+	}
+	
+	public void eliminarCamion(String patente)
+	{
+		camionDatos.eliminarCamion(patente);
+	}
+	
+	public void modificarCamion(Camion cam)
+	{
+		camionDatos.modificarCamion(cam);
+	}
 }

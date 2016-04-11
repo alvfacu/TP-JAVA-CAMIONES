@@ -171,8 +171,6 @@ public class CatalogoPersonal extends Catalogo {
 		}	
 		
 		return null;
-		
-	
 	}
 	
 	//Hay que ver como se maneja cuando no encuentra ninguno. 
@@ -255,8 +253,6 @@ public class CatalogoPersonal extends Catalogo {
 		
 	public void eliminarPersonal(Personal p){
 		
-		
-		{
 			String sql = "DELETE FROM personal WHERE dni like ?";
 			
 			try
@@ -274,9 +270,37 @@ public class CatalogoPersonal extends Catalogo {
 			finally
 			{
 				CerrarConexion();			
+			}	
+	}
+
+	public boolean existeDNI(String dni) {
+		
+		String sql = "SELECT COUNT(*) as cant FROM personal WHERE dni like ?";
+		ResultSet rs = null;
+		boolean est = false;
+		
+		try
+		{
+			AbrirConexion(sql);
+			sentencia.setString(1, dni);
+			rs = sentencia.executeQuery();
+			
+			if(rs.next())
+			{
+				if(rs.getInt("cant")>0)
+				{
+					est = true;
+				}
 			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally
+		{
+			CerrarConexion();
 		}
 		
-		
+		return est;
 	}	
 }

@@ -111,23 +111,22 @@ public class Personal {
 		}	
 	}
 	
-	
-	
 	public Personal() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Personal(String dni, String nombre, String apellido, int telefono, String direccion, String usuario,
-			String password, boolean disponibilidad, Tipo tipo) {
+	
+	public Personal(String nombre, String apellido, String direccion, String dni, int tel, String usuario,
+			String password, Tipo tipo, boolean disponible) {
 		super();
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.telefono = telefono;
+		this.telefono = tel;
 		this.direccion = direccion;
 		this.usuario = usuario;
 		this.password = password;
-		this.disponibilidad = disponibilidad;
+		this.disponibilidad = disponible;
 		this.tipo = tipo;
 	}
 

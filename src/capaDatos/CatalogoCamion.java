@@ -156,5 +156,36 @@ public class CatalogoCamion extends Catalogo {
 			CerrarConexion();			
 		}
 	}
+
+	public boolean existePatente(String patente) {
+		
+		String sql = "SELECT COUNT(*) as cant FROM camiones WHERE patente like ?";
+		ResultSet rs = null;
+		boolean est = false;
+		
+		try
+		{
+			AbrirConexion(sql);
+			sentencia.setString(1, patente);
+			rs = sentencia.executeQuery();
+			
+			if(rs.next())
+			{
+				if(rs.getInt("cant")>0)
+				{
+					est = true;
+				}
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally
+		{
+			CerrarConexion();
+		}
+		
+		return est;
+	}
 			
 }

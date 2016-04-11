@@ -35,5 +35,10 @@ public class ControladorPersonal {
 	{
 		return datosPersonal.dameUno(patente);
 	}
+
+	public boolean existeDNI(String dni) {
+		// TODO Auto-generated method stub
+		return datosPersonal.existeDNI(dni);
+	}
 	
 }
