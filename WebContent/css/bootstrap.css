@@ -3133,21 +3133,23 @@ fieldset[disabled] .btn-default.active {
   color: #fff;
   background-color: #333;
 }
+
 .btn-primary {
-  padding:5px;
-  color: #fff;
-  background-color:  #286090 ;
-  border-color: #2e6da4;
+    padding: 7px;
+    color: #fff;
+    background-color:#2C5A58;
+    border-color: #99C5C3;
+
 }
 .btn-primary:focus,
 .btn-primary.focus {
   color: #fff;
-  background-color:  #A52A2A;
+  background-color:  #2aa5a5;
   border-color: #122b40;
 }
 .btn-primary:hover {
   color: #fff;
-  background-color:    #A52A2A;
+  background-color:    #698E8E;
   border-color: #204d74;
 }
 .btn-primary:active,
@@ -3500,7 +3502,7 @@ fieldset[disabled] .btn-link:focus {
 .btn-lg,
 .btn-group-lg > .btn {
   padding: 10px 16px;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 1.3333333;
   border-radius: 6px;
 }
@@ -3522,7 +3524,8 @@ fieldset[disabled] .btn-link:focus {
   margin:10px;
   padding:10px;
   display: block;
-  width: 100%;
+  vertical-align: baseline;
+
 }
 .btn-block + .btn-block {
   margin-top: 5px;
@@ -4652,9 +4655,10 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color:   #A52A2A;
-  border-color: #080808;
+    background-color: #027D76;
+    border-color: #33C533;
 }
+
 .navbar-inverse .navbar-brand {
   color: #F0FFFF ;
 }
@@ -6816,4 +6820,8 @@ button.close {
 
 img.mediana{
   width: 200px; height: 500px;
+}
+.nivel1{
+  width: 50%;
+  background-color: #36928E;
 }

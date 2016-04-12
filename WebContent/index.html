@@ -13,7 +13,23 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script> 
+    $(document).ready(function(){
+    $("#desplegadoca").hide();
+    $("#desplegadorca").click(function(){
+        $("#desplegadoca").slideToggle("slow");
+         });
+    $("#desplegadoper").hide();
+    $("#desplegadorper").click(function(){
+        $("#desplegadoper").slideToggle("slow");
+         });
 
+
+    });
+
+
+</script>
     <!-- Custom CSS -->
     <style>
     body {
@@ -73,14 +89,16 @@
                 <h1>Bienvenido!</h1>
                 <p class="lead">Seleccione la acción que desea realizar</p>
                     <div class="row">
-                        <div class="col-lg-5 text-center"></div> 
-                        <div class="col-lg-2 text-center">
-                <a  href="listados.html" class="btn btn-primary btn-lg btn-block">Camiones</a>
-                <a  href="altaPersonal.html" class="btn btn-primary btn-lg btn-block">Nuevo Personal</a>
+                        <div class="col-lg-1 text-center"></div> 
+                        <div class="col-lg-10 text-center center-block" aling-items:"center">
+                <a  id="desplegadorca" class="btn btn-primary btn-lg btn-block">Camiones</a>
+                <a id="desplegadoca" href="http://localhost:8080/sis/listadoCamiones.jsp" class="btn btn-primary btn-lg btn-block nivel1">Listados</a>
+                <a id="desplegadorper"  class="btn btn-primary btn-lg btn-block">Personal</a>
+                <a id="desplegadoper" href="altaPersonal.html" class="btn btn-primary btn-lg btn-block nivel1">Nuevo Personal</a>
                 <a  href="listados.html" class="btn btn-primary btn-lg btn-block">Listados</a>
                 <a  href="www.google.com" class="btn btn-primary btn-lg btn-block">Reportes</a>
                         </div>
-                        <div class="col-lg-5 text-center">
+                        <div class="col-lg-1 text-center">
                            </div>
                     </div>
             </div>
