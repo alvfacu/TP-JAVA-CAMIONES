@@ -36,6 +36,12 @@ h1 a {
  	font-size: 16px;
  }
 
+ h3 {
+ 	margin: 30px auto 20px;
+ 	text-align: center;
+
+ }
+
  .accordion {
  	width: 100%;
  	max-width: 360px;
@@ -52,7 +58,7 @@ h1 a {
 	display: block;
 	padding: 15px 15px 15px 42px;
 	color: #C70B0B;
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 700;
 	border-bottom: 1px solid #CCC;
 	position: relative;
@@ -113,6 +119,7 @@ h1 a {
  	display: block;
  	text-decoration: none;
  	color: white;
+ 	font-size:15px;
 
  	padding: 12px;
  	padding-left: 42px;

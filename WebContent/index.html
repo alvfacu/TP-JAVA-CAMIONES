@@ -11,7 +11,7 @@
 
     <title>Pagina de inicio</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
  
     <!-- Iconos -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -38,7 +38,6 @@
 
 <body>
 
-    <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -53,56 +52,61 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right" style="font-family:font-family: Arial;font-size:20px;">
                     <li>
-                        <a href="#">About</a>
+                        <a href="#"> <span class="glyphicon glyphicon-user" aria-hidden="true" style="padding:5px;"></span>Mi perfil</a>
+
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="#"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"style="padding:5px;"></span> Salir</a>
                     </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
+                    </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
 
+
     <!-- Page Content -->
     <div class="container">
 
-        <div class="row">
-          <h1>Seleccione la acción que desea realizar</h1>
+        <div class="row center-block" >
+                 <h3>Seleccione la acción que desea realizar</h3>
     <!-- Contenedor -->
     <ul id="accordion" class="accordion">
+         <li>
+            <div class="link"><i class="fa fa-database" aria-hidden="true"></i>Viaje<i class="fa fa-chevron-down"></i></div>
+            <ul class="submenu">
+                <li><a href="#">DEFINIR</a></li>
+            </ul>
+        </li>
         <li>
             <div class="link"><i class="fa fa-truck" aria-hidden="true"></i>Camiones<i class="fa fa-chevron-down"></i></div>
             <ul class="submenu">
-                <li><a href="#">Alta</a></li>
-                <li><a href="#">Baja</a></li>
-                <li><a href="#">Modificacion</a></li>
-                <li><a href="#">Listado</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true" style="padding:10px;"></span>Alta</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true" style="padding:10px;"></span>Baja</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-retweet" aria-hidden="true" style="padding:10px;"></span>Modificacion</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-file" aria-hidden="true" style="padding:10px;"></span>Listado</a></li>
             </ul>
         </li>
         <li>
             <div class="link"><i class="fa fa-male" aria-hidden="true"></i>Personal<i class="fa fa-chevron-down"></i></div>
             <ul class="submenu">
-                <li><a href="#">Alta</a></li>
-                <li><a href="#">Baja</a></li>
-                <li><a href="#">Modificacion</a></li>
-                <li><a href="#">Listado</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true" style="padding:10px;"></span>Alta</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true" style="padding:10px;"></span>Baja</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-retweet" aria-hidden="true" style="padding:10px;"></span>Modificacion</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-file" aria-hidden="true" style="padding:10px;"></span>Listado</a></li>
             </ul>
         </li>
         <li>
-            <div class="link"><i class="fa fa-mobile"></i>Localidades<i class="fa fa-chevron-down"></i></div>
+            <div class="link"><i class="fa fa-globe"></i>Localidades<i class="fa fa-chevron-down"></i></div>
             <ul class="submenu">
                 <li><a href="#">DEFINIR</a></li>
                
             </ul>
         </li>
-        <li><div class="link"><i class="fa fa-globe"></i>Ciudades<i class="fa fa-chevron-down"></i></div>
+        <li><div class="link"><i class="fa fa-star"></i>OTROS<i class="fa fa-chevron-down"></i></div>
             <ul class="submenu">
                 <li><a href="#">DEFINIR</a></li>
             </ul>
@@ -120,8 +124,10 @@
     <!-- jQuery Version 1.11.1 -->
     <script src="js/jquery.js"></script>
     <script src="js/main.js"></script>
+     <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
    
 </body>
-
+<footer></footer>
 </html>

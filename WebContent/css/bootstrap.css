@@ -242,11 +242,18 @@ th {
   p,
   h2,
   h3 {
+
+ 
+  margin: 30px auto 20px;
+ 
+
     orphans: 3;
     widows: 3;
   }
   h2,
   h3 {
+      margin: 30px auto 20px;
+
     page-break-after: avoid;
   }
   .navbar {
@@ -1285,6 +1292,8 @@ h2,
 h3,
 .h3 {
   font-size: 24px;
+  color: #A54848;
+  font-weight: bold;
 }
 h4,
 .h4 {
@@ -4339,10 +4348,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-brand {
   float: left;
-  height: 50px;
-  padding: 15px 15px;
-  font-size: 18px;
-  line-height: 20px;
+  height: 0px;
+  padding: 30px;
+  font-size: 25px;
+  line-height: 0px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
