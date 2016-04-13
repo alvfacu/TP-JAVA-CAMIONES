@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,8 +32,32 @@ public class AltaPersonal extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+			response.setContentType("text/html;charset=UTF-8");
+	        PrintWriter out = response.getWriter();
+	    
+	        try {
+	        	
+	        	ControladorPersonal cp = new ControladorPersonal();
+	        	String dni = request.getParameter("dni");
+	            boolean rta = cp.existeDNI(dni);
+	       
+	           if (rta==true){
+	            out.println("<font color=red>PERSONA YA REGISTRADA, INGRESE UN DNI NUEVO</font>");
+	            }
+	            else if(rta==false)
+	            {	out.println("");
+	            }}
+	            catch (Exception ex) {
+
+	            out.println("Error ->" + ex.getMessage());
+
+	        } finally {
+	            out.close();
+	        }	}
+	        
+	        
+	        
+	      
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

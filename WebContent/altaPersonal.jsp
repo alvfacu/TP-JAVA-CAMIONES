@@ -14,6 +14,36 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/business-frontpage.css" rel="stylesheet">
+    
+     <script src="js/jquery.js" type="text/javascript"></script>
+	<script type="text/javascript">
+    $(document).ready(function(){
+        $(".dni").change(function(){
+            var dni = $(this).val();
+            if(dni.length >= 3){
+                $(".statusdni").html("Checking availability");
+                 $.ajax({
+                    type: "GET",
+                    url: "check",
+                    data: "dni="+ dni,
+                    success: function(msg){
+
+                    
+                            $(".statusdni").html(msg);
+
+                        
+                    }
+                }); 
+            }
+            else{
+                 
+                $(".statusdni").html("<font color=red>Username should be <b>3</b> character long.</font>");
+            }
+            
+        });
+    });
+        	 
+        </script>
      
      <script type="text/javascript">
 
@@ -54,11 +84,13 @@
                         <br>  
                     <input name="direccion" type="text"  class="form-control" placeholder="Direccion" required autofocus>
                         <br>
-                    <input name="dni" type="text" class="form-control" placeholder="DNI"  autofocus>
+                    <input name="dni" type="text" class="form-control dni" placeholder="DNI"  autofocus>
+                     <span class="statusdni"></span>
                         <br>
                     <input name="telefono" type="text"  class="form-control" placeholder="Telefono" required autofocus >
                         <br>                      
-                    <input name="usuario" type="text"  class="form-control" placeholder="Usuario" required autofocus >
+                    <input name="usuario" type="text"  class="form-control " placeholder="Usuario" required autofocus >
+                        
                         <br>
                     <input id="password" name="password" type="password"  class="form-control" placeholder="Password" required autofocus >
                         <br>
