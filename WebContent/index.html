@@ -11,26 +11,15 @@
 
     <title>Pagina de inicio</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <script> 
-    $(document).ready(function(){
-    $("#desplegadoca").hide();
-    $("#desplegadorca").click(function(){
-        $("#desplegadoca").slideToggle("slow");
-         });
-    $("#desplegadoper").hide();
-    $("#desplegadorper").click(function(){
-        $("#desplegadoper").slideToggle("slow");
-         });
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <!-- Iconos -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
 
-    });
-
-
-</script>
-    <!-- Custom CSS -->
     <style>
     body {
         padding-top: 70px;
@@ -85,22 +74,40 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-lg-12 text-center">
-                <h1>Bienvenido!</h1>
-                <p class="lead">Seleccione la acción que desea realizar</p>
-                    <div class="row">
-                        <div class="col-lg-1 text-center"></div> 
-                        <div class="col-lg-10 text-center center-block" aling-items:"center">
-                <a  id="desplegadorca" class="btn btn-primary btn-lg btn-block">Camiones</a>
-                <a id="desplegadoca" href="http://localhost:8080/sis/listadoCamiones.jsp" class="btn btn-primary btn-lg btn-block nivel1">Listados</a>
-                <a id="desplegadorper"  class="btn btn-primary btn-lg btn-block">Personal</a>
-                <a id="desplegadoper" href="altaPersonal.html" class="btn btn-primary btn-lg btn-block nivel1">Nuevo Personal</a>
-                <a  href="listados.html" class="btn btn-primary btn-lg btn-block">Listados</a>
-                <a  href="www.google.com" class="btn btn-primary btn-lg btn-block">Reportes</a>
-                        </div>
-                        <div class="col-lg-1 text-center">
-                           </div>
-                    </div>
+          <h1>Seleccione la acción que desea realizar</h1>
+    <!-- Contenedor -->
+    <ul id="accordion" class="accordion">
+        <li>
+            <div class="link"><i class="fa fa-truck" aria-hidden="true"></i>Camiones<i class="fa fa-chevron-down"></i></div>
+            <ul class="submenu">
+                <li><a href="#">Alta</a></li>
+                <li><a href="#">Baja</a></li>
+                <li><a href="#">Modificacion</a></li>
+                <li><a href="#">Listado</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="link"><i class="fa fa-male" aria-hidden="true"></i>Personal<i class="fa fa-chevron-down"></i></div>
+            <ul class="submenu">
+                <li><a href="#">Alta</a></li>
+                <li><a href="#">Baja</a></li>
+                <li><a href="#">Modificacion</a></li>
+                <li><a href="#">Listado</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="link"><i class="fa fa-mobile"></i>Localidades<i class="fa fa-chevron-down"></i></div>
+            <ul class="submenu">
+                <li><a href="#">DEFINIR</a></li>
+               
+            </ul>
+        </li>
+        <li><div class="link"><i class="fa fa-globe"></i>Ciudades<i class="fa fa-chevron-down"></i></div>
+            <ul class="submenu">
+                <li><a href="#">DEFINIR</a></li>
+            </ul>
+        </li>
+    </ul>
             </div>
 
         </div>
@@ -112,10 +119,9 @@
 
     <!-- jQuery Version 1.11.1 -->
     <script src="js/jquery.js"></script>
-
+    <script src="js/main.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
+   
 </body>
 
 </html>
