@@ -76,4 +76,7 @@ public class CatalogoLocalidad extends Catalogo {
 		// TODO Auto-generated method stub
 		return loc;
 	}
+
+
+
 }

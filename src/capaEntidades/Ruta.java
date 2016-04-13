@@ -46,5 +46,9 @@ public class Ruta {
 		this.dirDestino = dirDestino;
 		this.distancia = distancia;
 	}
+
+	public Ruta() {
+		// TODO Auto-generated constructor stub
+	}
 	
 }

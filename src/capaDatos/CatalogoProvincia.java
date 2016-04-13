@@ -8,7 +8,7 @@ import capaEntidades.Provincia;
 
 public class CatalogoProvincia extends Catalogo {
 	
-	//Devuelve una Provincia sin sus localidades 
+	// Devuelve una Provincia sin sus localidades 
 	public Provincia dameUno(int id)
 	{
 		Provincia prov = null;
@@ -41,6 +41,7 @@ public class CatalogoProvincia extends Catalogo {
 		return prov;
 	}
 	
+	// Devuelve todas las provincias
 	public ArrayList<Provincia> dameTodo()
 	{
 		ArrayList<Provincia> provincias = null;

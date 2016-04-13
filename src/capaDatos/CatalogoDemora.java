@@ -9,11 +9,7 @@ import capaEntidades.Demora;
 import connection.ConexionBD;
 
 public class CatalogoDemora {
-	
-
-	
-	
-	
+		
 	public static void modificaDemora(Demora demo) {
 		
 		//Elimina la demora anterior
@@ -53,9 +49,6 @@ public class CatalogoDemora {
 			}
 		}
     
-	
-		
-		
 		// Agrega la nueva demora
 		
 		String sql1 = "INSERT INTO demora(demora,id) values (?,?)" ;
@@ -98,7 +91,5 @@ public class CatalogoDemora {
 	
 		
 	}
-
-
 
 }

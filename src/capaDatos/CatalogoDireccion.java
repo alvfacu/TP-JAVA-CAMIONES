@@ -40,7 +40,7 @@ public class CatalogoDireccion extends Catalogo{
 					dir.setPiso(rs.getInt("piso"));
 				}
 				val = rs.getString("letra");
-				if((boolean)val.equals(""))
+				if(val==null || (boolean)val.equals(""))
 				{
 					dir.setDepto('0');					
 				}

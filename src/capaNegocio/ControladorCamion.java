@@ -30,7 +30,6 @@ public class ControladorCamion {
 	}
 
 	public boolean existePatente(String patente) {
-		// TODO Auto-generated method stub
 		return camionDatos.existePatente(patente);
 	}
 	

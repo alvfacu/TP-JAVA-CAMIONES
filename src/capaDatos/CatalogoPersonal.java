@@ -12,6 +12,7 @@ import capaEntidades.Personal;
 
 public class CatalogoPersonal extends Catalogo {
 
+	// Agrega un nuevo personal
 	public void agregarPersonal(Personal pe) {
 		
 		String sql = "INSERT INTO personal(dni,nombre,apellido,telefono,direccion,usuario,password,tipo,disponibilidad) values (?,?,?,?,?,?,?,?,?)";
@@ -51,9 +52,8 @@ public class CatalogoPersonal extends Catalogo {
 		
 	}
 
-	//Valida la existencia o no del Personal en la Base de Datos
-	
-	 private static boolean validarExistencia(Personal p) {
+	// Valida la existencia o no del Personal en la Base de Datos
+	private static boolean validarExistencia(Personal p) {
 		boolean rta=false;	
 		String sql = "SELECT nombre FROM PERSONAL WHERE dni IN (SELECT dni FROM PERSONAL where dni like ?)";
 		ResultSet rs = null;
@@ -76,9 +76,8 @@ public class CatalogoPersonal extends Catalogo {
 		
 	}
 	
-	//Valida que las credenciales que ingreso en el Loggin sean correctas o no.
-
-	public  Personal validarUsuario(String us, String pass) {
+	// Valida que las credenciales que ingreso en el Loggin sean correctas o no.
+	public Personal validarUsuario(String us, String pass) {
 		
 		
 		String sql = "SELECT * FROM personal where usuario = ? and password = ?";
@@ -128,8 +127,7 @@ public class CatalogoPersonal extends Catalogo {
 		
 	}
 
-	//Trae todo el Personal registrado en la BD
-	
+	// Trae todo el Personal registrado en la BD	
 	public ArrayList<Personal> dameTodo(){
 		
 		ArrayList<Personal> personales =null;
@@ -173,8 +171,8 @@ public class CatalogoPersonal extends Catalogo {
 		return null;
 	}
 	
-	//Hay que ver como se maneja cuando no encuentra ninguno. 
-	
+	// Hay que ver como se maneja cuando no encuentra ninguno. 
+	// Devuelve un objeto null si no encuentra ningún personal con el dni ingresado.
 	public  Personal dameUno(String dni){
 		Personal p =null;
 		String sql = "SELECT * FROM personal WHERE dni like ?";
@@ -212,6 +210,7 @@ public class CatalogoPersonal extends Catalogo {
 	return p;
 	}
 
+	// Modifica un personal
 	public void modificarPersonal(Personal p){
 		
 		String sql = "UPDATE Personal SET nombre=?, apellido=?, telefono=?,direccion=?,usuario=?,password=?,tipo=?,disponibilidad=? WHERE dni=?";
@@ -251,6 +250,7 @@ public class CatalogoPersonal extends Catalogo {
 		}	
 	}
 		
+	// Elimina un personal (baja física, se elimina definitivamente de la BD)
 	public void eliminarPersonal(Personal p){
 		
 			String sql = "DELETE FROM personal WHERE dni like ?";
@@ -273,6 +273,8 @@ public class CatalogoPersonal extends Catalogo {
 			}	
 	}
 
+	// Valida existencia del personal: devuelve true si existe algun personal con el dni ingresada. Caso contrario, devuelve false.
+	// Cuenta la cantidad de registros que coinciden con el dni (teoricamente debería existir 1 solo registro)
 	public boolean existeDNI(String dni) {
 		
 		String sql = "SELECT COUNT(*) as cant FROM personal WHERE dni like ?";

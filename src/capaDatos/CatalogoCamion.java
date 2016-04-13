@@ -7,6 +7,7 @@ import capaEntidades.Camion;
 
 public class CatalogoCamion extends Catalogo {
 	
+	// Devuelve el conjunto de todos los camiones
 	public ArrayList<Camion> dameTodo()
 	{
 		ArrayList<Camion> camiones = null;
@@ -47,6 +48,7 @@ public class CatalogoCamion extends Catalogo {
 		return camiones;
 	}
 	
+	// Devuelve el camión que coincida con la patente (en caso de no encontrarlo, devuelve un objeto null)
 	public Camion dameUno(String patente)
 	{
 		Camion camion = null;
@@ -83,6 +85,7 @@ public class CatalogoCamion extends Catalogo {
 		return camion;
 	}
 	
+	// Agrega un nuevo camion
 	public void agregarCamion(Camion camion)
 	{		
 		String sql = "INSERT INTO camiones(patente,marca,modelo,descripcion,kmRecorridosDesdeMantenimiento,kmRecorridosEnViaje,estado) values (?,?,?,?,?,?,?)";
@@ -110,6 +113,7 @@ public class CatalogoCamion extends Catalogo {
 		}	
 	}
 	
+	// Modifica un camion	
 	public void modificarCamion(Camion camion)
 	{
 		String sql = "UPDATE camiones SET marca=?, modelo=?, descripcion=?, kmRecorridosDesdeMantenimiento=? , kmRecorridosEnViaje=?, estado=? WHERE patente=?";
@@ -137,6 +141,7 @@ public class CatalogoCamion extends Catalogo {
 		}		
 	}
 	
+	// Elimina un camion (baja fisica, se elimina definitivamente de los registros)
 	public void eliminarCamion(String patente)
 	{
 		String sql = "DELETE FROM camiones WHERE patente like ?";
@@ -157,6 +162,8 @@ public class CatalogoCamion extends Catalogo {
 		}
 	}
 
+	// Verifica existencia del camion: devuelve true si existe algun camion con la patente ingresada. Caso contrario, devuelve false.
+	// Cuenta la cantidad de registros que coinciden con la patente (teoricamente debería existir 1 solo registro)
 	public boolean existePatente(String patente) {
 		
 		String sql = "SELECT COUNT(*) as cant FROM camiones WHERE patente like ?";

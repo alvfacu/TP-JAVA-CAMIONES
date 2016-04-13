@@ -1,14 +1,21 @@
 package capaNegocio;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
+import capaDatos.CatalogoDireccion;
+import capaDatos.CatalogoMantenimiento;
+import capaDatos.CatalogoRuta;
 import capaEntidades.Camion;
+import capaEntidades.Direccion;
 import capaEntidades.Mantenimiento;
 import capaEntidades.Mantenimiento.Tipo;
+import capaEntidades.Ruta;
 
 
 public class Ejecuta {
-	
+
 	// MESA DE PRUEBA
 
 	public static void main(String[] args) {
@@ -35,7 +42,7 @@ public class Ejecuta {
 	calendario.set(2015, 02, 24, 03, 02, 24);
 	System.out.print(calendario.get(2));*/ 
 		
-		ControladorCamion cc = new ControladorCamion();
+		/*ControladorCamion cc = new ControladorCamion();
 		Camion ca = new Camion();
 		ca = cc.dameUno("HIV800");
 		
@@ -52,8 +59,14 @@ public class Ejecuta {
 
 		
 		Mantenimiento man = new Mantenimiento(fechaHM,fechaHI,fechaHE,tipo,kmIn,kmE,ca);
-		cm.agregarMantenimiento(man);
+		cm.agregarMantenimiento(man);*/
 		
+		ArrayList<Ruta> mas = new CatalogoRuta().dameTodoXOrigen(21);
+		
+		for(int i=0;i<mas.size();i++)
+		{
+			System.out.println(mas.get(i).getDistancia()+" | "+mas.get(i).getDirOrigen().getLoc().getNombreLocalidad()+" | "+mas.get(i).getDirDestino().getLoc().getNombreLocalidad());
+		}
 	
 	
 	}

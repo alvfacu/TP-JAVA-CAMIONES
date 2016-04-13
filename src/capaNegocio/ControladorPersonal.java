@@ -37,7 +37,6 @@ public class ControladorPersonal {
 	}
 
 	public boolean existeDNI(String dni) {
-		// TODO Auto-generated method stub
 		return datosPersonal.existeDNI(dni);
 	}
 	
