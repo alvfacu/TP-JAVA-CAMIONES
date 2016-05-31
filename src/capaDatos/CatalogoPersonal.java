@@ -168,7 +168,7 @@ public class CatalogoPersonal extends Catalogo {
 			CerrarConexion();			
 		}	
 		
-		return null;
+		return personales;
 	}
 	
 	// Hay que ver como se maneja cuando no encuentra ninguno. 

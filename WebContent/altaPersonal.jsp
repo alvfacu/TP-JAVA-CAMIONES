@@ -15,7 +15,7 @@
     <!-- Custom CSS -->
     <link href="css/business-frontpage.css" rel="stylesheet">
     
-     <script src="js/jquery.js" type="text/javascript"></script>
+   <!--   <script src="js/jquery.js" type="text/javascript"></script>
 	<script type="text/javascript">
     $(document).ready(function(){
         $(".dni").change(function(){
@@ -27,17 +27,20 @@
                     url: "check",
                     data: "dni="+ dni,
                     success: function(msg){
-
-                    
+    
                             $(".statusdni").html(msg);
-
-                        
+                            if (msg = '<font color=red>PERSONA YA REGISTRADA, INGRESE UN DNI NUEVO</font>'){
+                            	  $('#Enviar').attr("disabled", true);
+                            	}
+                            else  {$('#Enviar').attr("disabled", false	);}
+   
                     }
                 }); 
             }
             else{
                  
-                $(".statusdni").html("<font color=red>Username should be <b>3</b> character long.</font>");
+                $(".statusdni").html("<font color=red>Ingrese un dni de longitud mayor</font>");
+                $('#Enviar').attr("disabled", true);
             }
             
         });
@@ -60,7 +63,7 @@
     		}
        }
      	</script>
-
+-->
 </head>
 
 <body>
@@ -107,7 +110,7 @@
                     	<div class="col-lg-3"><input type="radio" id="dispo" name="disponibilidad" value="true"> Si</div>
                         <div class="col-lg-3"><input type="radio" id="dispo" name="disponibilidad" value="false"> No</div>
   					</div><br> 
-                         <button class="btn btn-lg  btn-primary btn-block" type="submit">Enviar</button><br>
+                         <button class="btn btn-lg  btn-primary btn-block" type="submit" id="Enviar">Enviar</button><br>
                 <!-- End Form --> 
   						</form></div>
                 	

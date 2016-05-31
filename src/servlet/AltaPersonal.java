@@ -1,7 +1,7 @@
 package servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+// import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,8 +32,8 @@ public class AltaPersonal extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-			response.setContentType("text/html;charset=UTF-8");
-	        PrintWriter out = response.getWriter();
+		  /*  	response.setContentType("text/html;charset=UTF-8");
+	    PrintWriter out = response.getWriter();
 	    
 	        try {
 	        	
@@ -53,10 +53,10 @@ public class AltaPersonal extends HttpServlet {
 
 	        } finally {
 	            out.close();
-	        }	}
+	        }	
+	        */
 	        
-	        
-	        
+	        }
 	      
 
 	/**

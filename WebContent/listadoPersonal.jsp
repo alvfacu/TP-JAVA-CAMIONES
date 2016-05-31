@@ -75,7 +75,7 @@
  <% for(int i=0; i<personal.size();i++) { %>
   <tr>
         <td align="center"> <%= personal.get(i).getDni() %> </td>
- 
+ 		<td align="center"> <%= personal.get(i).getUsuario() %> </td>
  		<td align="center"> <%= personal.get(i).getNombre() %> </td>
  		<td align="center"> <%= personal.get(i).getApellido() %> </td>
  		<td align="center"> <%= personal.get(i).getTelefono() %> </td>
