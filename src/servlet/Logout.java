@@ -9,20 +9,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import capaEntidades.Personal;
-import capaNegocio.Controlador;
-
 /**
- * Servlet implementation class Loggin
+ * Servlet implementation class Logout
  */
-@WebServlet("/Loggin")
-public class Loggin extends HttpServlet {
+@WebServlet("/Logout")
+public class Logout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public Loggin() {
+    public Logout() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -38,19 +36,8 @@ public class Loggin extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession sesion = request.getSession();
-		String usuario = request.getParameter("user");
-		String password = request.getParameter("pass");
-		Personal pe = new Personal();
-		Controlador c = new Controlador();
-		pe = c.validarUsuario(usuario,password);
-		if(pe==null) {
-			request.getRequestDispatcher("error.html").forward(request,response);}
-		else {
-			sesion.setAttribute("Usuario", pe);
-			request.getRequestDispatcher("index.jsp").forward(request,response);};
-			
-			
-		
+		sesion.invalidate();
+		response.sendRedirect("loggin.html");
 	}
 
 }
