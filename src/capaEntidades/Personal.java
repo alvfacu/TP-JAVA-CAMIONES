@@ -83,6 +83,9 @@ public class Personal {
 	public void setDisponibilidad(boolean disponibilidad) {
 		this.disponibilidad = disponibilidad;
 	}
+	public boolean getDisponibilidad(){
+		return disponibilidad;
+	}
 
 	public Tipo getTipo() {
 		return tipo;

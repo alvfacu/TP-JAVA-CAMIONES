@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="capaEntidades.Localidad" %>
-<%@ page import="capaNegocio.ControladorLocalidad;" %>
+<%@ page import="capaEntidades.Personal" %>
+<%@ page import="capaNegocio.ControladorPersonal;" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +18,7 @@
     <!-- Custom CSS -->
     <link href="css/business-frontpage.css" rel="stylesheet">
 
-<title>Listado de Localidades</title>
+<title>Listado del Personal</title>
 </head>
 
 <body>
@@ -54,22 +54,44 @@
         <!-- /.container -->
     </nav>
 
-    
+    /* 	private String dni;
+	private String nombre;
+	private String apellido;
+	private int telefono;
+	private String direccion;	
+	private String usuario;
+	private String password;
+	private boolean disponibilidad;
+	private Tipo tipo;	*/
+	
 <div class="container">
-<h2>Localidades ~<small>Listado de Localidades</small></h2>    
-    <% ArrayList<Localidad> localidad = new ControladorLocalidad().dameTodo();%>
+<h2>Personal ~<small>Listado del Personal</small></h2>    
+    <% ArrayList<Personal> personal = new ControladorPersonal().dameTodo();%>
 
 <table class="table table-hover table-responsive table-bordered" >
  <tr class="active" style="font-weight: bold;">
-  	<td> Codigo Postal </td>
-  	<td> Localidad </td>
-  	<td> Provincia </td>
+  	<td> Dni </td>
+  	<td> Usuario </td>
+  	<td> Nombre </td>
+  	<td> Apellido </td>
+  	<td> Telefono </td>
+  	<td> Direccion </td>
+  	<td> Disponibilidad </td>
+  	<td> Tipo </td>
+
+  	
  </tr>
- <% for(int i=0; i<localidad.size();i++) { %>
+ <% for(int i=0; i<personal.size();i++) { %>
   <tr>
-        <td align="center"> <%= localidad.get(i).getCodigoPostal() %> </td>
- 		<td align="center"> <%= localidad.get(i).getNombreLocalidad() %> </td>
- 		<td align="center"> <%= localidad.get(i).getProv().getNombreProvincia() %> </td>
+        <td align="center"> <%= personal.get(i).getDni() %> </td>
+ 		<td align="center"> <%= personal.get(i).getUsuario() %> </td>
+ 		<td align="center"> <%= personal.get(i).getNombre() %> </td>
+ 		<td align="center"> <%= personal.get(i).getApellido() %> </td>
+ 		<td align="center"> <%= personal.get(i).getTelefono() %> </td>
+ 		<td align="center"> <%= personal.get(i).getDireccion() %> </td>
+ 		<td align="center"> <%= personal.get(i).getDisponibilidad() %> </td>
+ 		<td align="center"> <%= personal.get(i).getTipo() %> </td>
+ 	
   </tr>
  <% } %> 
 </table>
