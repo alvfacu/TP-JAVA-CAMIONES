@@ -1,7 +1,8 @@
 package capaEntidades;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
+
 
 public class Viaje {
 
@@ -13,16 +14,41 @@ public class Viaje {
 	}
 	
 	private int nroViaje;
-	private Date fechaHoraSalidaPactada;
-	private Date fechaHoraSalidaReal;
-	private Date fechaHoraLlegadaPactada;
-	private Date fechaHoraLlegadaReal;
+	private Calendar fechaHoraSalidaPactada;
+	private Calendar fechaHoraSalidaReal;
+	private Calendar fechaHoraLlegadaPactada;
+	private Calendar fechaHoraLlegadaReal;
 	private double kmTotales;
 	private double kmReales;
 	private Estado estado;
 	private Personal camionero;
 	private Camion camion;
 	private ArrayList<Ruta> rutas;
+	
+	public Estado dameNombreEstado(String estado)
+	{		
+		if(Estado.Iniciado.toString().compareToIgnoreCase(estado) == 0)
+		{
+			return Estado.Iniciado;
+		}
+		else if(Estado.Cancelado.toString().compareToIgnoreCase(estado) == 0)
+		{
+			return Estado.Cancelado;
+		}
+		else if(Estado.NoIniciado.toString().compareToIgnoreCase(estado) == 0)
+		{
+			return Estado.NoIniciado;
+		}
+		else if(Estado.Finalizado.toString().compareToIgnoreCase(estado) == 0)
+		{
+			return Estado.Finalizado;
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
 	
 	public int getNroViaje() {
 		return nroViaje;
@@ -32,35 +58,35 @@ public class Viaje {
 		this.nroViaje = nroViaje;
 	}
 	
-	public Date getFechaHoraSalidaPactada() {
+	public Calendar getFechaHoraSalidaPactada() {
 		return fechaHoraSalidaPactada;
 	}
 	
-	public void setFechaHoraSalidaPactada(Date fechaHoraSalidaPactada) {
-		this.fechaHoraSalidaPactada = fechaHoraSalidaPactada;
+	public void setFechaHoraSalidaPactada(Calendar cal) {
+		this.fechaHoraSalidaPactada = cal;
 	}
 	
-	public Date getFechaHoraSalidaReal() {
+	public Calendar getFechaHoraSalidaReal() {
 		return fechaHoraSalidaReal;
 	}
 	
-	public void setFechaHoraSalidaReal(Date fechaHoraSalidaReal) {
-		this.fechaHoraSalidaReal = fechaHoraSalidaReal;
+	public void setFechaHoraSalidaReal(Calendar cal) {
+		this.fechaHoraSalidaReal = cal;
 	}
 	
-	public Date getFechaHoraLlegadaPactada() {
+	public Calendar getFechaHoraLlegadaPactada() {
 		return fechaHoraLlegadaPactada;
 	}
 	
-	public void setFechaHoraLlegadaPactada(Date fechaHoraLlegadaPactada) {
+	public void setFechaHoraLlegadaPactada(Calendar fechaHoraLlegadaPactada) {
 		this.fechaHoraLlegadaPactada = fechaHoraLlegadaPactada;
 	}
 	
-	public Date getFechaHoraLlegadaReal() {
+	public Calendar getFechaHoraLlegadaReal() {
 		return fechaHoraLlegadaReal;
 	}
 	
-	public void setFechaHoraLlegadaReal(Date fechaHoraLlegadaReal) {
+	public void setFechaHoraLlegadaReal(Calendar fechaHoraLlegadaReal) {
 		this.fechaHoraLlegadaReal = fechaHoraLlegadaReal;
 	}
 	
@@ -112,8 +138,8 @@ public class Viaje {
 		this.rutas = rutas;
 	}
 
-	public Viaje(int nroViaje, Date fechaHoraSalidaPactada, Date fechaHoraSalidaReal, Date fechaHoraLlegadaPactada,
-			Date fechaHoraLlegadaReal, double kmTotales, double kmReales, Estado estado, Personal camionero,
+	public Viaje(int nroViaje, Calendar fechaHoraSalidaPactada, Calendar fechaHoraSalidaReal, Calendar fechaHoraLlegadaPactada,
+			Calendar fechaHoraLlegadaReal, double kmTotales, double kmReales, Estado estado, Personal camionero,
 			Camion camion, ArrayList<Ruta> rutas) {
 		super();
 		this.nroViaje = nroViaje;
@@ -127,5 +153,9 @@ public class Viaje {
 		this.camionero = camionero;
 		this.camion = camion;
 		this.rutas = rutas;
+	}
+
+	public Viaje() {
+		// TODO Auto-generated constructor stub
 	}	
 }
