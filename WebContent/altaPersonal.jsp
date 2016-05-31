@@ -67,7 +67,7 @@
 </head>
 
 <body>
-
+    <%@include file="nav-bar.jsp" %>
 	<!-- Cointainer -->
 	<div class="container">
 		<hr>
