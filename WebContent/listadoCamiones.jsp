@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="capaEntidades.Camion" %>
-<%@ page import="capaNegocio.ControladorCamion;" %>
+<%@ page import="capaNegocio.ControladorCamion" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +35,9 @@
     </script>
 </head>
 <body>
-    <%@include file="nav-bar.jsp" %>
+    <%@page import="capaEntidades.Personal"%>
+	<% if((Personal)session.getAttribute("Usuario")!=null){ %>
+  	<%@include file="nav-bar.jsp" %>
 <div class="container" >
     
     <% ArrayList<Camion> camiones = new ControladorCamion().dameTodo();%>
@@ -70,5 +72,8 @@
         </table>
     
 </div>
+ 	  <%} else{%>
+	  <%@include file="error.html" %>
+	  <%}%>
 </body>
 </html>

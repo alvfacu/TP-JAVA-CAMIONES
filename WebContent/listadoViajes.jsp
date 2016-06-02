@@ -3,7 +3,7 @@
 <%@ page import="capaEntidades.Viaje" %>
 <%@ page import="capaNegocio.ControladorViaje" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.util.Date;" %>
+<%@ page import="java.util.Date" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +24,9 @@
 </head>
 
 <body>
-   <%@include file="nav-bar.jsp" %>
+   <%@page import="capaEntidades.Personal"%>
+	<% if((Personal)session.getAttribute("Usuario")!=null){ %>
+  	<%@include file="nav-bar.jsp" %>
 <div class="container">
 <h2>Viajes ~<small>                              Listado de Viajes</small></h2>    
     <% ArrayList<Viaje> viajes = new ControladorViaje().dameTodo(); %>
@@ -66,6 +68,9 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+     <%} else{%>
+	  <%@include file="error.html" %>
+	  <%}%>
 </body>
 </html>
 

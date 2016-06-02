@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="capaEntidades.Personal" %>
-<%@ page import="capaNegocio.ControladorPersonal;" %>
+<%@ page import="capaNegocio.ControladorPersonal" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +22,9 @@
 </head>
 
 <body>
-   <%@include file="nav-bar.jsp" %>
+   <%@page import="capaEntidades.Personal"%>
+	<% if((Personal)session.getAttribute("Usuario")!=null){ %>
+  	<%@include file="nav-bar.jsp" %>
 <div class="container">
 <h2>Personal ~<small>Listado del Personal</small></h2>    
    <!-- <//% ArrayList<Personal> personal = new ControladorPersonal().dameTodo();%> -->
@@ -74,5 +76,8 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+   	  <%} else{%>
+	  <%@include file="error.html" %>
+	  <%}%>
 </body>
 </html>

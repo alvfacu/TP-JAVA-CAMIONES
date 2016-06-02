@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="capaEntidades.Localidad" %>
-<%@ page import="capaNegocio.ControladorLocalidad;" %>
+<%@ page import="capaNegocio.ControladorLocalidad" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +42,9 @@ $(document).ready(function() {
     </script>
 </head>
 <body>
-<%@include file="nav-bar.jsp" %>
+	<%@page import="capaEntidades.Personal"%>
+	<% if((Personal)session.getAttribute("Usuario")!=null){ %>
+  	<%@include file="nav-bar.jsp" %>
 
 <div class="container">
     <% ArrayList<Localidad> localidad = new ControladorLocalidad().dameTodo();%>
@@ -70,5 +72,8 @@ $(document).ready(function() {
 
 </table>
 </div>
+ 	  <%} else{%>
+	  <%@include file="error.html" %>
+	  <%}%>
 </body>
 </html>

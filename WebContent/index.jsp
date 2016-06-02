@@ -29,7 +29,7 @@
 <body>
 	<%@page import="capaEntidades.Personal"%>
 	<% if((Personal)session.getAttribute("Usuario")!=null){ %>
-   <%@include file="nav-bar.jsp" %>
+   	<%@include file="nav-bar.jsp" %>
 
     <!-- Page Content -->
     <div class="container">
@@ -89,10 +89,9 @@
      <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
-  <%}
-  else{%>
-  <%@include file="error.html" %>
-  <%}%>
+   	  <%} else{%>
+	  <%@include file="error.html" %>
+	  <%}%>
 </body>
 <footer></footer>
 </html>

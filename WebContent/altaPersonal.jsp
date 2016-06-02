@@ -67,7 +67,9 @@
 </head>
 
 <body>
-    <%@include file="nav-bar.jsp" %>
+    <%@page import="capaEntidades.Personal"%>
+	<% if((Personal)session.getAttribute("Usuario")!=null){ %>
+  	<%@include file="nav-bar.jsp" %>
 	<!-- Cointainer -->
 	<div class="container">
 		<hr>
@@ -124,6 +126,8 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
+ 	  <%} else{%>
+	  <%@include file="error.html" %>
+	  <%}%>
 </body>
 </html>
