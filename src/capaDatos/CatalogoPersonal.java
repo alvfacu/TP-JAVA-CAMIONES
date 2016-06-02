@@ -1,11 +1,19 @@
 package capaDatos;
 
+
+import java.awt.Image;
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+
+
+
 
 import connection.ConexionBD;
 import capaEntidades.Personal;
@@ -173,10 +181,13 @@ public class CatalogoPersonal extends Catalogo {
 	
 	// Hay que ver como se maneja cuando no encuentra ninguno. 
 	// Devuelve un objeto null si no encuentra ningún personal con el dni ingresado.
-	public  Personal dameUno(String dni){
+	public  Personal dameUno(String dni) throws IOException{
 		Personal p =null;
 		String sql = "SELECT * FROM personal WHERE dni like ?";
 		ResultSet rs = null;
+		Blob imagen=null;
+		byte[] rpta=null;
+
 	
 	try
 	{			
@@ -195,9 +206,12 @@ public class CatalogoPersonal extends Catalogo {
 			p.setUsuario(rs.getString("usuario"));
 			p.setPassword(rs.getString("password"));
 			p.setDisponibilidad(rs.getBoolean("Disponibilidad"));
-			p.setTipo(new Personal().dameNombreTipo(rs.getString("tipo")));			
-		}					
-	} 
+			p.setTipo(new Personal().dameNombreTipo(rs.getString("tipo")));	
+			imagen = rs.getBlob("imagen");
+			rpta = imagen.getBytes(1,(int)imagen.length());
+		    p.setImagen(rpta);
+			
+		}} 
 	catch (SQLException e) 
 	{		
 		e.printStackTrace();

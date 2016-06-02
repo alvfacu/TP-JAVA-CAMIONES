@@ -32,11 +32,13 @@ $(document).ready(function() {
     </script>
 </head>
 <body>
+<%@include file="nav-bar.jsp" %>
+
 <div class="container">
 
   <% ArrayList<Localidad> localidad = new ControladorLocalidad().dameTodo();%>
 
-<table id="example" class="display" cellspacing="0" width="50%">
+<table id="example" class="display" cellspacing="0" width="100%">
         
         <thead>
             <tr>

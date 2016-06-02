@@ -1,9 +1,11 @@
 /*
  * Table styles
  */
+
 table.dataTable {
+  padding: 10px;
   width: 100%;
-  margin: 0 auto;
+  margin-top: 10 px;
   clear: both;
   border-collapse: separate;
   border-spacing: 0;
@@ -429,7 +431,9 @@ table.dataTable td {
   clear: both;
   height: 0;
 }
-
+ .espaciado{
+  margin-top: 10px;
+ }
 @media screen and (max-width: 767px) {
   .dataTables_wrapper .dataTables_info,
   .dataTables_wrapper .dataTables_paginate {

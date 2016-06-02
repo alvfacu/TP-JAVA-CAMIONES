@@ -1,5 +1,6 @@
 package capaEntidades;
-
+import java.awt.Image;
+import java.io.InputStream;
 
 
 public class Personal {
@@ -20,6 +21,23 @@ public class Personal {
 	private boolean disponibilidad;
 	private Tipo tipo;	
 	
+	//Imagen de perfil
+	private byte[] imagen;
+
+	public String getByteArrayString(){
+		return new String(this.imagen);
+	}
+	
+	   public byte[] getImagen()
+	    {
+	 return imagen;
+	    }
+	    
+	   public void setImagen(byte[] rpta) {
+	        this.imagen = rpta ;
+	    }
+	    
+	  //Getters & Setters restantes 
 	public String getUsuario() {
 		return usuario;
 	}

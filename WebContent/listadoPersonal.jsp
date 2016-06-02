@@ -25,8 +25,8 @@
    <%@include file="nav-bar.jsp" %>
 <div class="container">
 <h2>Personal ~<small>Listado del Personal</small></h2>    
-    <% ArrayList<Personal> personal = new ControladorPersonal().dameTodo();%>
-
+   <!-- <//% ArrayList<Personal> personal = new ControladorPersonal().dameTodo();%> -->
+	<% Personal personal = new ControladorPersonal().dameUno("37450910");%>
 <table class="table table-hover table-responsive table-bordered" >
  <tr class="active" style="font-weight: bold;">
   	<td> Dni </td>
@@ -37,22 +37,34 @@
   	<td> Direccion </td>
   	<td> Disponibilidad </td>
   	<td> Tipo </td>
+  	<td> Imagen </td>
 
   	
  </tr>
- <% for(int i=0; i<personal.size();i++) { %>
+ <!-- <//% for(int i=0; i<personal.size();i++) { %> -->
   <tr>
-        <td align="center"> <%= personal.get(i).getDni() %> </td>
- 		<td align="center"> <%= personal.get(i).getUsuario() %> </td>
- 		<td align="center"> <%= personal.get(i).getNombre() %> </td>
- 		<td align="center"> <%= personal.get(i).getApellido() %> </td>
- 		<td align="center"> <%= personal.get(i).getTelefono() %> </td>
- 		<td align="center"> <%= personal.get(i).getDireccion() %> </td>
- 		<td align="center"> <%= personal.get(i).getDisponibilidad() %> </td>
- 		<td align="center"> <%= personal.get(i).getTipo() %> </td>
- 	
+      <!--  <td align="center"> <-%= personal.get(i).getDni() %> </td>
+ 		<td align="center"> <-%= personal.get(i).getUsuario() %> </td>
+ 		<td align="center"> <-%= personal.get(i).getNombre() %> </td>
+ 		<td align="center"> <-%= personal.get(i).getApellido() %> </td>
+ 		<td align="center"> <-%= personal.get(i).getTelefono() %> </td>
+ 		<td align="center"> <-%= personal.get(i).getDireccion() %> </td>
+ 		<td align="center"> <-%= personal.get(i).getDisponibilidad() %> </td>
+ 		<td align="center"> <-%= personal.get(i).getTipo() %> </td>
+ 		<td aling="center"> <-%= personal.get(i).getImagen() %> </td>-->
+ 		<td aling="center">	<%= personal.getDni() %> </td>
+ 		<td align="center"> <%= personal.getUsuario() %> </td>
+ 		<td align="center"> <%= personal.getNombre() %> </td>
+ 		<td align="center"> <%= personal.getApellido() %> </td>
+ 		<td align="center"> <%= personal.getTelefono() %> </td>
+ 		<td align="center"> <%= personal.getDireccion() %> </td>
+ 		<td align="center"> <%= personal.getDisponibilidad() %> </td>
+ 		<td align="center"> <%= personal.getTipo() %> </td>
+ 		<td aling="center"> <img src="<%= 
+ 				response.reset();
+ 		response.setContentType("image/jpeg"); personal.getByteArrayString() %> "> </td>
   </tr>
- <% } %> 
+ <!--  <-% } %> -->
 </table>
 <br>
 </div>

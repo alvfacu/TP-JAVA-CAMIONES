@@ -1,6 +1,9 @@
 package capaNegocio;
 
+import java.io.IOException;
 import java.util.ArrayList;
+
+
 
 import capaDatos.CatalogoPersonal;
 import capaEntidades.Personal;
@@ -31,7 +34,7 @@ public class ControladorPersonal {
 		return datosPersonal.dameTodo();
 	}
 	
-	public Personal dameUno(String patente)
+	public Personal dameUno(String patente) throws IOException
 	{
 		return datosPersonal.dameUno(patente);
 	}

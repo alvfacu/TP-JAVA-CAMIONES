@@ -36,11 +36,11 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right" style="font-family:font-family: Arial;font-size:20px;">
                     <li>
-                        <a href="#"> <span class="glyphicon glyphicon-user" aria-hidden="true" style="padding:5px;"></span>Mi perfil</a>
+                        <a href="#"> <span class="glyphicon glyphicon-user" aria-hidden="true" style="padding:5px;"></span> Mi perfil</a>
 
                     </li>
                     <li>
-                        <a href="Logout" name="salir"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"style="padding:5px;"></span> Salir</a>
+                        <a href="Logout" name="salir"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true" style="padding:5px;"></span> Salir</a>
                     </li>
                     </ul>
             </div>

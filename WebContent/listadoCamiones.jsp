@@ -4,61 +4,70 @@
 <%@ page import="capaNegocio.ControladorCamion;" %>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-      <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <link href="css/business-frontpage.css" rel="stylesheet">
+    <!--JQuery para la Tabla-->
+    <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
+    <script type="text/javascript" language="javascript" src="js/bootstrap.js"> </script>
 
-<title>Listado de Camiones</title>
+    <!--Hojas de Estilo para la tabla-->
+    <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
+    <title>Listado de Camiones</title>
+
+    <script type="text/javascript" language="javascript" >
+        $(document).ready(function() {
+            $('#example').dataTable( {
+            "oLanguage": {
+            "sLengthMenu": "Mostrar _MENU_ registros",
+             "sSearch": "Busqueda:"
+             },
+            "aLengthMenu": [[10,25, 50, 75, -1], [10,25, 50, 75, "All"]],
+            "pageLength": 10
+            } );
+        } );
+    </script>
 </head>
-
 <body>
-<!-- Navigation -->
-       <%@include file="nav-bar.jsp" %>
-    <div class="container">
-<h2>Camiones ~<small>                              Listado de Camiones</small></h2>    
+    <%@include file="nav-bar.jsp" %>
+<div class="container" >
+    
     <% ArrayList<Camion> camiones = new ControladorCamion().dameTodo();%>
 
-<table class="table table-hover table-responsive table-bordered" >
- <tr class="active" style="font-weight: bold;">
-    <td> Patente </td>
-    <td> Marca </td>
-    <td> Modelo </td>
-    <td> Descripcion </td>
-    <td> Km Recorridos desde Mantenimiento </td>
-    <td> Km Recorridos en viaje (kg) </td>
-    <td> Estado </td>
- </tr>
- <% for(int i=0; i<camiones.size();i++) { %>
-  <tr>
-        <td align="center"> <%= camiones.get(i).getPatente() %> </td>
-        <td align="center"> <%= camiones.get(i).getMarca() %> </td>
-        <td align="center"> <%= camiones.get(i).getModelo() %> </td>
-        <td align="center"> <%= camiones.get(i).getDescripcion() %> </td>
-        <td align="center"> <%= camiones.get(i).getKmRecorridosDesdeMantenimiento() %> </td>
-        <td align="center"> <%= camiones.get(i).getKmRecorridosEnViaje() %> </td>
-        <td align="center"> <%= camiones.get(i).getEstado().toString() %> </td>
-  </tr>
- <% } %> 
-</table>
-<br>
+    <table id="example" class="display" cellspacing="0" width="100%">
+        
+        <thead>
+            <tr>
+            <th> Patente </th>
+            <th> Marca </th>
+            <th> Modelo </th>
+            <th> Descripcion </th>
+            <th> Km Recorridos desde Mantenimiento </th>
+            <th> Km Recorridos en viaje (kg) </th>
+            <th> Estado </th>
+            </tr>
+        </thead>
+
+         <tbody>
+            <% for(int i=0; i<camiones.size();i++) { %>
+                    <tr>
+                       <td align="center"> <%= camiones.get(i).getPatente() %> </td>
+                       <td align="center"> <%= camiones.get(i).getMarca() %> </td>
+                       <td align="center"> <%= camiones.get(i).getModelo() %> </td>
+                       <td align="center"> <%= camiones.get(i).getDescripcion() %> </td>
+                       <td align="center"> <%= camiones.get(i).getKmRecorridosDesdeMantenimiento() %> </td>
+                       <td align="center"> <%= camiones.get(i).getKmRecorridosEnViaje() %> </td>
+                       <td align="center"> <%= camiones.get(i).getEstado().toString() %> </td>
+                    </tr>
+            <% } %> 
+        </tbody>
+        </table>
+    
 </div>
-
- <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
-
-
