@@ -48,8 +48,8 @@
             <div class="link"><i class="fa fa-truck" aria-hidden="true"></i>Camiones<i class="fa fa-chevron-down"></i></div>
             <ul class="submenu">
                 <li><a href="altaCamion.jsp"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true" style="padding:10px;"></span>Alta</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true" style="padding:10px;"></span>Baja</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-retweet" aria-hidden="true" style="padding:10px;"></span>Modificacion</a></li>
+                <li><a href="bajaCamiones.jsp"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true" style="padding:10px;"></span>Baja</a></li>
+                <li><a href="modificarCamion.jsp"><span class="glyphicon glyphicon-retweet" aria-hidden="true" style="padding:10px;"></span>Modificacion</a></li>
                 <li><a href="listadoCamiones.jsp"><span class="glyphicon glyphicon-file" aria-hidden="true" style="padding:10px;"></span>Listado</a></li>
             </ul>
         </li>

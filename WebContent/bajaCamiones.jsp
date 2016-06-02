@@ -18,7 +18,6 @@
 
     <!--Hojas de Estilo para la tabla-->
     <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
- 
     <title>Listado de Camiones</title>
 
     <script type="text/javascript" language="javascript" >
@@ -37,11 +36,20 @@
 <body>
     <%@include file="nav-bar.jsp" %>
 <div class="container" >
-    
-    <% ArrayList<Camion> camiones = new ControladorCamion().dameTodo();%>
-
+<div >
+<form action="BajaCamion"  method="POST">
+<fieldset>
+<br><br>
+<label>Ingrese la patente del Camion a eliminar:&nbsp;&nbsp;</label>
+<input name="patente" type="text" id="inputUser"  placeholder="Patente" required autofocus size="50">&nbsp;&nbsp;
+<button type="submit" value="Submit" >Borrar</button><br>
+</fieldset>	
+<br><br>
+</form>
+</div>
+<div>
+  <% ArrayList<Camion> camiones = new ControladorCamion().dameTodo();%>
     <table id="example" class="display" cellspacing="0" width="100%">
-        
         <thead>
             <tr>
             <th> Patente </th>
@@ -53,7 +61,6 @@
             <th> Estado </th>
             </tr>
         </thead>
-
          <tbody>
             <% for(int i=0; i<camiones.size();i++) { %>
                     <tr>
@@ -68,7 +75,7 @@
             <% } %> 
         </tbody>
         </table>
-    
+</div>      
 </div>
 </body>
 </html>

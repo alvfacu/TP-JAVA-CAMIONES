@@ -60,9 +60,9 @@
  		<td align="center"> <%= personal.getDireccion() %> </td>
  		<td align="center"> <%= personal.getDisponibilidad() %> </td>
  		<td align="center"> <%= personal.getTipo() %> </td>
- 		<td aling="center"> <img src="<%= 
- 				response.reset();
- 		response.setContentType("image/jpeg"); personal.getByteArrayString() %> "> </td>
+ 		
+ 	//			response.reset();
+ 	//	response.setContentType("image/jpeg"); personal.getByteArrayString() %> "> </td>
   </tr>
  <!--  <-% } %> -->
 </table>

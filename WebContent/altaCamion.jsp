@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="martin-facu" content="formulario de alta">
 
- 	 <title>Alta de CamiÃ³n</title>
+ 	 <title>Alta de Camión</title>
 
  	  <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -42,8 +42,8 @@
 					<!-- Form -->
 					<form name="formu" action="AltaCamion" class="" method="POST" onSubmit="return validacion();">
 
-                    <h2 class= "alinearh2"><strong>Registrar un nuevo Camion ~</strong></h2>
-                    <h2 class= "alinearh2"><small>Ingrese los datos para registrar un nuevo camiÃ³n</small></h2>
+                    <h2 class= "alinearh2"><strong>Registrar un nuevo Camión </strong></h2>
+                    <h2 class= "alinearh2"><small>Ingrese los datos para registrar un nuevo camión</small></h2>
                     <br>
                     
                     <input name="patente" type="text"  class="form-control" placeholder="Patente" required autofocus>

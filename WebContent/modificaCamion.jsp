@@ -18,7 +18,6 @@
 
     <!--Hojas de Estilo para la tabla-->
     <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
- 
     <title>Listado de Camiones</title>
 
     <script type="text/javascript" language="javascript" >
@@ -37,11 +36,21 @@
 <body>
     <%@include file="nav-bar.jsp" %>
 <div class="container" >
-    
-    <% ArrayList<Camion> camiones = new ControladorCamion().dameTodo();%>
-
+<div >
+<form action="ModificarCamion"  method="POST">
+<fieldset>
+<br><br>
+<label>Ingrese la patente del Camion a modificar:&nbsp;&nbsp;</label>
+<input name="patente" type="text" id="inputUser"  placeholder="Patente" required autofocus size="50">&nbsp;&nbsp;
+<button type="submit" value="Submit" >Modificar</button><br>
+</fieldset>	
+<br><br>
+</form>
+</div>
+<div>
+ 
+  <% Camion camion = (Camion)request.getAttribute("recupera"); %>
     <table id="example" class="display" cellspacing="0" width="100%">
-        
         <thead>
             <tr>
             <th> Patente </th>
@@ -53,22 +62,27 @@
             <th> Estado </th>
             </tr>
         </thead>
-
          <tbody>
-            <% for(int i=0; i<camiones.size();i++) { %>
+           
                     <tr>
-                       <td align="center"> <%= camiones.get(i).getPatente() %> </td>
-                       <td align="center"> <%= camiones.get(i).getMarca() %> </td>
-                       <td align="center"> <%= camiones.get(i).getModelo() %> </td>
-                       <td align="center"> <%= camiones.get(i).getDescripcion() %> </td>
-                       <td align="center"> <%= camiones.get(i).getKmRecorridosDesdeMantenimiento() %> </td>
-                       <td align="center"> <%= camiones.get(i).getKmRecorridosEnViaje() %> </td>
-                       <td align="center"> <%= camiones.get(i).getEstado().toString() %> </td>
+                       <td align="center"> <%= camion.getPatente() %> </td>
+                       <td align="center"> <%= camion.getMarca() %> </td>
+                       <td align="center"> <%= camion.getModelo() %> </td>
+                       <td align="center"> <%= camion.getDescripcion() %> </td>
+                       <td align="center"> <%= camion.getKmRecorridosDesdeMantenimiento() %> </td>
+                       <td align="center"> <%= camion.getKmRecorridosEnViaje() %> </td>
+                       <td align="center"> <%= camion.getEstado().toString() %> </td>
                     </tr>
-            <% } %> 
+          
         </tbody>
         </table>
-    
+</div>      
 </div>
 </body>
 </html>
+
+
+
+
+
+
