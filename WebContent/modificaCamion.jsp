@@ -49,23 +49,23 @@
                     <h2 class= "alinearh2"><small>Ingrese los datos para Modificar un nuevo camión</small></h2>
                     <br>
                     
-                    <input name="patente" type="text"  class="form-control" placeholder="Patente" value="" required autofocus>
+                    <input name="patente" type="text"  class="form-control" placeholder="Patente" value="<%=camion.getPatente() %>" required autofocus readonly="readonly" >
                         <br>
-                    <input name="marca" type="text"  class="form-control" placeholder="Marca" required autofocus>
+                    <input name="marca" type="text"  class="form-control" placeholder="Marca" value="<%=camion.getMarca() %>" required autofocus>
                         <br>  
-                    <input name="modelo" type="text"  class="form-control" placeholder="Modelo" required autofocus>
+                    <input name="modelo" type="text"  class="form-control" placeholder="Modelo" value="<%=camion.getModelo() %>" required autofocus>
                         <br>
-                    <input name="descripcion" type="text" class="form-control" placeholder="Descripcion"  autofocus>
+                    <input name="descripcion" type="text" class="form-control" placeholder="Descripcion" value="<%=camion.getDescripcion() %>" autofocus>
                         <br>
-                    <input id="campo_numerico" name="kmRecorridosEnViaje" type="text"  class="form-control" placeholder="Kilometros Iniciales" required autofocus >
+                    <input id="campo_numerico" name="kmRecorridosEnViaje" type="text"  class="form-control" placeholder="Kilometros Iniciales" value="<%=camion.getKmRecorridosEnViaje() %>" required autofocus >
                         <br>
-                    <input  type="text" class="form-control" placeholder="Kilometros Recorridos Desde Mantenimiento" required autofocus disabled>
+                    <input  id="kmRecorridosMantenimiento" type="text" name="kmRecorridosMantenimiento" class="form-control" placeholder="Kilometros Recorridos Desde Mantenimiento" value="<%=camion.getKmRecorridosDesdeMantenimiento() %>" required autofocus>
                         <br>                    
                       <div class="row">
-                    	<div class="col-lg-2"><input type="radio" name="estado" value="Disponible" checked> Disponible</div>
-                        <div class="col-lg-3"><input type="radio" name="estado" value="No Disponible" > No Disponible</div>
-                        <div class="col-lg-3"><input type="radio" name="estado" value="Viajando" > Viajando</div>
-  					    <div class="col-lg-3"><input type="radio" name="estado" value="Mantenimiento" > Mantenimiento</div>
+                    	<div class="col-lg-2"><input type="radio" name="estado" value="Disponible" <%=camion.getEstado().toString().charAt(0)=='D'?"checked":" "%>> Disponible</div>
+                        <div class="col-lg-3"><input type="radio" name="estado" value="NoDisponible" <%=camion.getEstado().toString().charAt(0)=='N'?"checked":" "%> > No Disponible</div>
+                        <div class="col-lg-3"><input type="radio" name="estado" value="Viajando" <%=camion.getEstado().toString().charAt(0)=='V'?"checked":" "%>> Viajando</div>
+  					    <div class="col-lg-3"><input type="radio" name="estado" value="Mantenimiento" <%=camion.getEstado().toString().charAt(0)=='M'?"checked":" "%> > Mantenimiento</div>
   					</div><br>
                          <button class="btn btn-lg  btn-primary btn-block" type="submit">Enviar</button><br>
                 <!-- End Form --> 

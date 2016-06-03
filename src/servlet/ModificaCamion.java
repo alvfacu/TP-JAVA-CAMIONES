@@ -40,26 +40,24 @@ public class ModificaCamion extends HttpServlet {
 		
 		String patente = request.getParameter("patente");
 		if(new ControladorCamion().existePatente(request.getParameter("patente")))
-		{
-		//elimino primero para poder modificar
-		
-		new ControladorCamion().eliminarCamion(patente);
-		
-		String marca = request.getParameter("marca");
-		String modelo = request.getParameter("modelo");
-		String descripcion = request.getParameter("descripcion");
-		double kmi = CambiarComaPorPunto(request.getParameter("kmRecorridosEnViaje"));	
-		Camion.Estado est = new Camion().dameNombreEstado(request.getParameter("estado"));
-		Camion ca = new Camion(patente, marca, modelo, descripcion, kmi,0,est);
-		new ControladorCamion().agregarCamion(ca);	
-		response.sendRedirect("exito.html");
+		{			
+			String marca = request.getParameter("marca");
+			String modelo = request.getParameter("modelo");
+			String descripcion = request.getParameter("descripcion");
+			double kmi = CambiarComaPorPunto(request.getParameter("kmRecorridosEnViaje"));
+			double kmm = CambiarComaPorPunto(request.getParameter("kmRecorridosMantenimiento"));
+			Camion.Estado est = new Camion().dameNombreEstado(request.getParameter("estado"));
+			Camion ca = new Camion(patente, marca, modelo, descripcion, kmi,kmm,est);
+			new ControladorCamion().modificarCamion(ca);	
+			response.sendRedirect("modificarCamion.jsp");
 		}
 	}
-		private double CambiarComaPorPunto(String km) {
+	
+	private double CambiarComaPorPunto(String km) {
 			if(km.contains(","))
 			{
 				km = km.replace(",",".");
 			}
 			return Double.valueOf(km);
-		}
+	}
 }

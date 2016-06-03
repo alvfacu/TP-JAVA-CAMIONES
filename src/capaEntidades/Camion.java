@@ -100,6 +100,30 @@ public class Camion {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public String dameNombreEstado(Estado estado)
+	{		
+		if(Estado.Disponible == estado)
+		{
+			return "Disponible";
+		}
+		else if(Estado.NoDisponible == estado)
+		{
+			return "No Disponible";
+		}
+		else if(Estado.Viajando == estado)
+		{
+			return "Viajando";
+		}
+		else if(Estado.Mantenimiento == estado)
+		{
+			return "Mantenimiento";
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
 
 
 	//Devuelve el tipo de Estado en base al estado con el que se encuentra registrado en la BD (pasamos string a enum Estado)

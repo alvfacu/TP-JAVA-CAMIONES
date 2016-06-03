@@ -18,5 +18,10 @@ public class ControladorRuta {
 	{
 		return datosRuta.dameTodoXOrigen(dirO);
 	}
+	
+	public ArrayList<Ruta> dameTodoXViaje(int viaje)
+	{
+		return datosRuta.dameTodoXViaje(viaje);
+	}
 
 }

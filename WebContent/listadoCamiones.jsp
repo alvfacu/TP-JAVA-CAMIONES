@@ -65,7 +65,7 @@
                        <td align="center"> <%= camiones.get(i).getDescripcion() %> </td>
                        <td align="center"> <%= camiones.get(i).getKmRecorridosDesdeMantenimiento() %> </td>
                        <td align="center"> <%= camiones.get(i).getKmRecorridosEnViaje() %> </td>
-                       <td align="center"> <%= camiones.get(i).getEstado().toString() %> </td>
+                       <td align="center"> <%= camiones.get(i).dameNombreEstado(camiones.get(i).getEstado()) %> </td>
                     </tr>
             <% } %> 
         </tbody>

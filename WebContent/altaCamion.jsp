@@ -49,7 +49,7 @@
                     <input  type="text" class="form-control" placeholder="Kilometros Recorridos Desde Mantenimiento" required autofocus disabled><br>
                     <div class="row">
                     	<div class="col-lg-2"><input type="radio" name="estado" value="Disponible" checked> Disponible</div>
-                        <div class="col-lg-3"><input type="radio" name="estado" value="No Disponible" disabled> No Disponible</div>
+                        <div class="col-lg-3"><input type="radio" name="estado" value="NoDisponible" disabled> No Disponible</div>
                         <div class="col-lg-3"><input type="radio" name="estado" value="Viajando" disabled> Viajando</div>
   					    <div class="col-lg-3"><input type="radio" name="estado" value="Mantenimiento" disabled> Mantenimiento</div>
   					</div><br>

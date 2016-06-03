@@ -19,4 +19,9 @@ public class ControladorViaje{
 		return viajeDatos.dameTodo();
 	}
 	
+	public void agregarRuta(int viaje, int ruta)
+	{
+		viajeDatos.agregarRuta(viaje, ruta);
+	}
+	
 }

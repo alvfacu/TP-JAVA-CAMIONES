@@ -116,7 +116,7 @@ public class CatalogoCamion extends Catalogo {
 	// Modifica un camion	
 	public void modificarCamion(Camion camion)
 	{
-		String sql = "UPDATE camiones SET marca=?, modelo=?, descripcion=?, kmRecorridosDesdeMantenimiento=? , kmRecorridosEnViaje=?, estado=? WHERE patente=?";
+		String sql = "UPDATE camiones SET marca=?, modelo=?, descripcion=?, kmRecorridosDesdeMantenimiento=? , kmRecorridosEnViaje=?, estado=? WHERE patente LIKE ?";
 		
 		try
 		{			
