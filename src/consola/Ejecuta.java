@@ -1,21 +1,18 @@
 package consola;
 
-import capaDatos.CatalogoCamion;
-import capaEntidades.Camion;
+import capaEntidades.Demora;
+import capaNegocio.ControladorDemora;
 
 public class Ejecuta {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		Camion camion = new CatalogoCamion().dameUno("HIV800");
-		
-		camion.setDescripcion("MUY BUENO");
-		
-		new CatalogoCamion().modificarCamion(camion);
-		
-		System.out.println(camion.getDescripcion());
-		
+	
+		// Demora demora = new Demora(6000);
+		ControladorDemora cd = new ControladorDemora();
+		Demora demora = new Demora();
+		demora = cd.dameDemoraActual();
+		System.out.println(demora.getHoras());
+		System.out.println(demora.getMinutos());
+	
 	}
-
 }

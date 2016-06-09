@@ -1,6 +1,5 @@
 package capaEntidades;
-import java.awt.Image;
-import java.io.InputStream;
+
 
 
 public class Personal {

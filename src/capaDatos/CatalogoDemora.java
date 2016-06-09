@@ -1,69 +1,59 @@
 package capaDatos;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
 import capaEntidades.Demora;
-import connection.ConexionBD;
 
-public class CatalogoDemora {
-		
-	public static void modificaDemora(Demora demo) {
-		
-		//Elimina la demora anterior
-		
-		String sql = "DELETE FROM demora WHERE id=?";
-		
-		PreparedStatement sentencia = null;
+
+public class CatalogoDemora extends Catalogo {
+
+	// Demora dem = new Demora();
+	
+	public Demora dameDemoraActual() {
+		Demora demora = null;
+		String sql = "SELECT horas,minutos FROM demoras";
 		ResultSet rs = null;
-		
-		try 
+
+		try
 		{			
-			sentencia = ConexionBD.getInstancia().getConn().prepareStatement(sql);
-			sentencia.setInt(1, 1);
-			sentencia.executeUpdate();					
+			AbrirConexion(sql);
+			rs = sentencia.executeQuery();
+
+			if(rs.next())
+			{
+				demora = new Demora();
+				demora.setHoras(rs.getInt("horas"));
+				demora.setMinutos(rs.getInt("minutos"));
+			}					
 		} 
 		catch (SQLException e) 
-		{
+		{		
 			e.printStackTrace();
-		}
+		}	
 		finally
 		{
-			try
-			{
-				if (rs!=null)
-				{
-					rs.close();
-				}
-				if (sentencia!=null && !sentencia.isClosed())
-				{
-					sentencia.close();
-				}
-				ConexionBD.getInstancia().CloseConn();
-			}
-			catch (SQLException sqle)
-			{
-				sqle.printStackTrace();
-			}
-		}
-    
-		// Agrega la nueva demora
+			CerrarConexion();			
+		}	
+
+		return demora;
+	}
+
+	public void agregarDemora(Demora demora) {
 		
-		String sql1 = "INSERT INTO demora(demora,id) values (?,?)" ;
-		PreparedStatement sentencia1 = null;
-		Connection conn = ConexionBD.getInstancia().getConn();
+		String sql = "INSERT INTO demoras (idDemora,horas,minutos) VALUES (?,?,?)";
 		
 		try 
-		{
-			sentencia1 = conn.prepareStatement(sql1);
-			
-			sentencia1.setTime(1, demo.getDemora());
-			sentencia1.setInt(2, 1);
-			
-			sentencia1.execute(); 
+		{				
+			AbrirConexion(sql);
 
+			sentencia.setInt(1, 1);
+			sentencia.setInt(2, demora.getHoras());
+			sentencia.setInt(3, demora.getMinutos());
+			
+			sentencia.execute(); 
 		} 
 		catch (SQLException e) 
 		{
@@ -71,25 +61,32 @@ public class CatalogoDemora {
 		}
 		finally
 		{
-			try
-			{
-				if(sentencia1!=null && !sentencia1.isClosed())
-				{
-					sentencia1.close();
-				}
-				ConexionBD.getInstancia().CloseConn();
-			}
-			catch (SQLException sqle)
-			{
-				sqle.printStackTrace();
-			}			
-		}		
+			CerrarConexion();			
+		}	
+		
+		
+	}
+	
+	public void eliminarDemora(){
+		String sql = "DELETE FROM demoras WHERE idDemora = 1";
 
-	
-	
-	
-	
+		try
+		{			
+			AbrirConexion(sql);
+			sentencia.executeUpdate();								
+		} 
+		catch (SQLException e) 
+		{		
+			e.printStackTrace();
+		}	
+		finally
+		{
+			CerrarConexion();			
+		}
 		
 	}
 
+
+	
 }
+

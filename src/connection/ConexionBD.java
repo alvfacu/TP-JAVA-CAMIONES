@@ -11,7 +11,7 @@ public class ConexionBD {
 	private static ConexionBD instancia;
 
 	/* Creo una instancia de la clase ConexionBD */ 
-	
+
 	public static ConexionBD getInstancia(){ //Método para obtener la única instancia
 		if(instancia==null){
 			instancia=new ConexionBD();

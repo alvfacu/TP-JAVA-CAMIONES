@@ -1,21 +1,36 @@
 package capaEntidades;
 
-import java.sql.Time;
 
 public class Demora {
 	
-	private Time demora;
+	
 
-	public Time getDemora() {
-		return demora;
+	private int horas;
+	private int minutos;
+
+	public int getHoras() {
+		return horas;
 	}
 
-	public void setDemora(Time demora) {
-		this.demora = demora;
+	public void setHoras(int horas) {
+		this.horas = horas;
 	}
 
-	public Demora(Time dem){
-		this.demora = dem;
+	public int getMinutos() {
+		return minutos;
+	}
+
+	public void setMinutos(int minutos) {
+		this.minutos = minutos;
+	}
+
+	public Demora(int hora,int minutos){
+		this.horas = hora;
+		this.minutos = minutos;
+		
+	}
+
+	public Demora() {
 	}
 	
 

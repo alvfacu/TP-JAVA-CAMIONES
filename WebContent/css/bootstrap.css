@@ -256,6 +256,7 @@ th {
 
     page-break-after: avoid;
   }
+  
   .navbar {
     display: none;
   }
@@ -4666,6 +4667,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse {
     background-color: #7B1614;
     border-color: #33C533;
+    font-family: sans-serif;
 }
 
 .navbar-inverse .navbar-brand {

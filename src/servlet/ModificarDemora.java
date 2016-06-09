@@ -1,25 +1,26 @@
 package servlet;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import capaNegocio.ControladorCamion;
+
+import capaEntidades.Demora;
+import capaNegocio.ControladorDemora;
 
 /**
- * Servlet implementation class BajaCamion
+ * Servlet implementation class ModificarDemora
  */
-@WebServlet("/BajaCamion")
-public class BajaCamion extends HttpServlet {
+@WebServlet("/ModificarDemora")
+public class ModificarDemora extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public BajaCamion() {
+    public ModificarDemora() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,24 +29,21 @@ public class BajaCamion extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String patente = request.getParameter("patente");
-		if((new ControladorCamion().existePatente(request.getParameter("patente"))))
-		{
-		
-			new ControladorCamion().eliminarCamion(patente);	
-			response.sendRedirect("bajaCamiones.jsp");
-		}
-		else
-		{
-			response.sendRedirect("error.html");
-		}
+		ControladorDemora cd = new ControladorDemora();	
+		cd.eliminarDemora();
+		Demora demoraNueva = new Demora();
+		demoraNueva.setHoras(Integer.parseInt(request.getParameter("horas")));
+		demoraNueva.setMinutos(Integer.parseInt(request.getParameter("minutos")));
+		cd.agregarDemora(demoraNueva);
+		response.sendRedirect("modificarDemora.jsp");
+			
 	}
 
 }
