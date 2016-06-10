@@ -2,6 +2,7 @@ package capaDatos;
 
 
 
+import java.awt.Image;
 import java.io.IOException;
 
 import java.sql.Blob;
@@ -102,7 +103,8 @@ public class CatalogoPersonal extends Catalogo {
 			rs = sentencia.executeQuery();
 
 			if (rs.next())
-			{ 			
+			{ 	
+				pe.setDni("dni");
 				pe.setNombre(rs.getString("nombre"));
 				pe.setApellido(rs.getString("apellido"));
 				pe.setUsuario(rs.getString("usuario"));
@@ -185,12 +187,12 @@ public class CatalogoPersonal extends Catalogo {
 		Personal p =null;
 		String sql = "SELECT * FROM personal WHERE dni like ?";
 		ResultSet rs = null;
+		Image rpta = null;
 		Blob imagen=null;
-		byte[] rpta=null;
-
 	
 	try
-	{			
+	{	
+		
 		AbrirConexion(sql);
 		sentencia.setString(1, dni);
 		rs = sentencia.executeQuery();
@@ -208,8 +210,9 @@ public class CatalogoPersonal extends Catalogo {
 			p.setDisponibilidad(rs.getBoolean("Disponibilidad"));
 			p.setTipo(new Personal().dameNombreTipo(rs.getString("tipo")));	
 			imagen = rs.getBlob("imagen");
-			rpta = imagen.getBytes(1,(int)imagen.length());
-		    p.setImagen(rpta);
+			rpta= javax.imageio.ImageIO.read(imagen.getBinaryStream());
+			p.setImagen(rpta);
+		   
 			
 		}} 
 	catch (SQLException e) 

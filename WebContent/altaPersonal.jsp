@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="martin-facu" content="formulario de alta">
 
- 	 <title>Formulario de Alta</title>
+ 	 <title>Alta de Personal</title>
 
  	  <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">

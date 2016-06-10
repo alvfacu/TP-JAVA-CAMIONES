@@ -17,6 +17,7 @@
  .demora {color:green;}
  .demora1 {font-size: 20px;}
  .demora1 {color:red;}
+ .padding {padding: 2px;}
  </STYLE>
 
 </head>
@@ -34,8 +35,8 @@
 	<label class="demora1">Minutos: <%= demora.getMinutos() %></label><br>
 	<br>
 	<label class="demora">Nueva Demora</label><br>
-	<input name="horas" type="number"  placeholder="Horas" value="" required autofocus >
-	<input name="minutos" type="number"   placeholder="Minutos" value="" required autofocus  >
+	<input class="padding" name="horas" type="number"  placeholder="Horas" value="" required autofocus >
+	<input class="padding" name="minutos" type="number"   placeholder="Minutos" value="" required autofocus  >
 		
 	<button type="submit">Guardar</button>
 	</form>

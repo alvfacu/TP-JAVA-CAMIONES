@@ -12,15 +12,15 @@
     <meta name="author" content="">
 
     <!--JQuery para la Tabla-->
-    <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js"></script>
-    <script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
-    <script type="text/javascript" language="javascript" src="js/bootstrap.js"> </script>
+    <script type="text/javascript"  src="//code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript"  src="js/jquery.dataTables.js"></script>
+    <script type="text/javascript"  src="js/bootstrap.js"> </script>
 
     <!--Hojas de Estilo para la tabla-->
     <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css">
-    <title>Listado de Camiones</title>
+    <title>Baja de Camiones</title>
 
-    <script type="text/javascript" language="javascript" >
+    <script type="text/javascript"  >
         $(document).ready(function() {
             $('#example').dataTable( {
             "oLanguage": {

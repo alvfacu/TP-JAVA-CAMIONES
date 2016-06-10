@@ -54,7 +54,7 @@
  		<td align="center"> <-%= personal.get(i).getDisponibilidad() %> </td>
  		<td align="center"> <-%= personal.get(i).getTipo() %> </td>
  		<td aling="center"> <-%= personal.get(i).getImagen() %> </td>-->
- 		<td aling="center">	<%= personal.getDni() %> </td>
+ 		<td align="center">	<%= personal.getDni() %> </td>
  		<td align="center"> <%= personal.getUsuario() %> </td>
  		<td align="center"> <%= personal.getNombre() %> </td>
  		<td align="center"> <%= personal.getApellido() %> </td>
@@ -62,9 +62,10 @@
  		<td align="center"> <%= personal.getDireccion() %> </td>
  		<td align="center"> <%= personal.getDisponibilidad() %> </td>
  		<td align="center"> <%= personal.getTipo() %> </td>
+ 		<td><img src="<%= personal.getImagen() %>" /></td>
  		
- 	//			response.reset();
- 	//	response.setContentType("image/jpeg"); personal.getByteArrayString() %> "> </td>
+ 	<!--  response.reset();
+ 	//	response.setContentType("image/jpeg"); personal.getByteArrayString() %> "> -->	
   </tr>
  <!--  <-% } %> -->
 </table>

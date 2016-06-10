@@ -1,28 +1,24 @@
 package servlet;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import capaEntidades.Personal;
-import capaNegocio.Controlador;
 
 /**
- * Servlet implementation class Loggin
+ * Servlet implementation class AltaDireccion
  */
-@WebServlet("/Loggin")
-public class Loggin extends HttpServlet {
+@WebServlet("/AltaDireccion")
+public class AltaDireccion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public Loggin() {
+    public AltaDireccion() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -30,27 +26,16 @@ public class Loggin extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request,response);
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession sesion = request.getSession();
-		String usuario = request.getParameter("user");
-		String password = request.getParameter("pass");
-		Personal pe = new Personal();
-		Controlador c = new Controlador();
-		pe = c.validarUsuario(usuario,password);
-		if(pe.getDni()==null) {
-			request.getRequestDispatcher("error.html").forward(request,response);}
-		else {
-			sesion.setAttribute("Usuario", pe);
-			request.getRequestDispatcher("index.jsp").forward(request,response);};
-			
-			
-		
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

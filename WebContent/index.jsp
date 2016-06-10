@@ -19,9 +19,8 @@
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/bootstrap.css">
 <style>
-body {
-	padding-top: 70px;
-}
+.bienvenida {color:red;}
+
 </style>
 
 
@@ -29,13 +28,16 @@ body {
 
 <body>
 	<%@page import="capaEntidades.Personal"%>
-
+	<% if((Personal)session.getAttribute("Usuario")!=null){
+		Personal pe = new Personal (); 
+		pe = (Personal)session.getAttribute("Usuario"); %>
 	<%@include file="nav-bar.jsp"%>
 
 	<!-- Page Content -->
 	<div class="container">
 
 		<div class="row center-block">
+			<h2 class="bienvenida">Bienvenido <%= pe.getNombre() %> </h2>
 			<h3>Seleccione la accion que desea realizar</h3>
 			<!-- Contenedor -->
 			<ul id="accordion" class="accordion">
@@ -45,6 +47,9 @@ body {
 							class="fa fa-chevron-down"></i>
 					</div>
 					<ul class="submenu">
+						<li><a href="generarViaje.jsp"><span
+								class="fa fa-truck" aria-hidden="true"
+								style="padding: 10px;"></span>Generar Viaje</a></li>
 						<li><a href="listadoViajes.jsp"><span
 								class="glyphicon glyphicon-file" aria-hidden="true"
 								style="padding: 10px;"></span>Listado</a></li>
@@ -107,6 +112,25 @@ body {
 						<li><a href="#">DEFINIR</a></li>
 					</ul>
 				</li>
+				<li>
+					<div class="link">
+						<i class="fa fa-globe"></i>Direcciones<i
+							class="fa fa-chevron-down"></i>
+					</div>
+					<ul class="submenu">
+						<li><a href="listadoDirecciones.jsp"><span
+								class="glyphicon glyphicon-file" aria-hidden="true"
+								style="padding: 10px;"></span>Listado</a></li>
+								<li><a href="altaDirecciones.jsp"><span
+								class="glyphicon glyphicon-arrow-up" aria-hidden="true"
+								style="padding: 10px;"></span>Alta</a></li>
+								<li><a href="bajaDirecciones.jsp"><span
+								class="glyphicon glyphicon-arrow-up" aria-hidden="true"
+								style="padding: 10px;"></span>Baja</a></li>
+								<li><a href="modificarDirecciones.jsp"><span class="glyphicon glyphicon-retweet"
+								aria-hidden="true" style="padding: 10px;"></span>Modificacion</a></li>
+					</ul>
+				</li>
 				<li><div class="link">
 						<i class="fa fa-calculator"></i>Configurar Demora<i class="fa fa-chevron-down"></i>
 					</div>
@@ -124,18 +148,16 @@ body {
 	<br>
 	<br>
 	<br>
-	<div class="row">
-		<div class="col-lg-12 text-center">Cerrar Seccion</div>
-	</div>
-	<!-- /.container -->
-
-	<!-- jQuery Version 1.11.1 -->
+	    	<!-- jQuery Version 1.11.1 -->
 	<script src="js/jquery.js"></script>
 	<script src="js/main.js"></script>
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.min.js"></script>
 	<!-- Bootstrap Core JavaScript -->
-
+	<!-- /.container -->
+	  <%} else{%>
+	  <%@include file="error.html" %>
+	  <%}%>
 </body>
 <footer></footer>
 </html>
