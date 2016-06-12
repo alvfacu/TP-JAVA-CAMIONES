@@ -10,7 +10,7 @@ import capaEntidades.Provincia;
 
 public class CatalogoDireccion extends Catalogo{
 	
-	public ArrayList<Direccion> dameTodoXLocalidad(int idLoc)
+	public ArrayList<Direccion> dameTodoPorLocalidad(int idLoc)
 	{
 		ArrayList<Direccion> direcciones = null;
 		

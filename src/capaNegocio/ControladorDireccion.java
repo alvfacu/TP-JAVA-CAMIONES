@@ -21,7 +21,7 @@ public class ControladorDireccion {
 	
 	public ArrayList<Direccion> dameTodoXLocalidad(int id)
 	{
-		return direccionDatos.dameTodoXLocalidad(id);
+		return direccionDatos.dameTodoPorLocalidad(id);
 	}
 		
 	public Direccion dameUno(int id)

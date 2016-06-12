@@ -17,37 +17,90 @@
         padding-top: 70px;
         
     }
+    .active{
+    background-color: yellow; }
     </style>
 </head>
 <body>
- <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.jsp">SysTruck</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right" style="font-family:font-family: Arial;font-size:20px;">
-                    <li>
-                        <a href="#"> <span class="glyphicon glyphicon-user" aria-hidden="true" style="padding:5px;"></span> Mi perfil</a>
+    
+<!-- Inicio barra de navegación -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+    	data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="index.jsp">SysTruck</a>
+    <!-- Aca va lo que se depliega del menu cuando se hace responsive -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" style="font-size:20px; padding:5px;">
+        <li class="active"><a href="index.jsp"><i class="fa fa-home"></i>&nbsp Inicio<span class="sr-only">(current)</span></a></li>
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+           aria-haspopup="true" aria-expanded="false">Viajes <span class="caret"></span></a>
+          <ul class="dropdown-menu" style="font-size:18px; padding:5px;">
+            <li><a href="altaViaje.jsp">Alta</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="bajaViaje.jsp">Baja</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="modificarViaje.jsp">Modificacion</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="listadoViajes.jsp">Listado</a></li>
+          </ul>
+        </li>
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+           aria-haspopup="true" aria-expanded="false">Camiones <span class="caret"></span></a>
+          <ul class="dropdown-menu" style="font-size:18px; padding:5px;">
+            <li><a href="altaCamion.jsp">Alta</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="bajaCamiones.jsp">Baja</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="modificarCamion.jsp">Modificacion</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="listadoCamiones.jsp">Listado</a></li>
+          </ul>
+        </li>
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+           aria-haspopup="true" aria-expanded="false">Personal <span class="caret"></span></a>
+          <ul class="dropdown-menu" style="font-size:18px; padding:5px;">
+            <li><a href="altaPersonal.jsp">Alta</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="bajaPersonal.jsp">Baja</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="modificarPersonal.jsp">Modificacion</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="listadoPersonal.jsps">Listado</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+           aria-haspopup="true" aria-expanded="false">Direcciones <span class="caret"></span></a>
+          <ul class="dropdown-menu" style="font-size:18px; padding:5px;">
+            <li><a href="altaDirecciones.jsp">Alta</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="bajaDirecciones.jsp">Baja</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="bajaDirecciones.jsp">Modificacion</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="listadoDirecciones.jsp">Listado</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" style="font-size:20px;">
+        <li><a href="#"><i class="fa fa-user" style="padding:5px;"></i>Mi Perfil</a></li>
+        <li><a href="Logout"><i class="fa fa-sign-out" style="padding:5px;"></i>Salir</a></li>
+      </ul>
+</div><!--Fin de contenedor del menu-->
+</div><!-- Fin Contenedor -->
+</nav><!-- Fin barra de navegación -->
 
-                    </li>
-                    <li>
-                        <a href="Logout" ><span class="glyphicon glyphicon-remove-sign" aria-hidden="true" style="padding:5px;"></span> Salir</a>
-                    </li>
-                    </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+   
 
 </body>
 </html>
+        

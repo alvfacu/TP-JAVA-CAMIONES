@@ -19,8 +19,7 @@
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/bootstrap.css">
 <style>
-.bienvenida {color:red;}
-
+.bienvenida {color:#ec6b6b;}
 </style>
 
 
@@ -40,7 +39,7 @@
 			<h2 class="bienvenida">Bienvenido <%= pe.getNombre() %> </h2>
 			<h3>Seleccione la accion que desea realizar</h3>
 			<!-- Contenedor -->
-			<ul id="accordion" class="accordion">
+			<ul id="accordion" class="accordion color">
 				<li>
 					<div class="link">
 						<i class="fa fa-database" aria-hidden="true"></i>Viaje<i
@@ -84,8 +83,8 @@
 						<li><a href="altaPersonal.jsp"><span
 								class="glyphicon glyphicon-arrow-up" aria-hidden="true"
 								style="padding: 10px;"></span>Alta</a></li>
-						<li><a href="#"><span
-								class="glyphicon glyphicon-arrow-down" aria-hidden="true"
+						<li><a href="#"><span 
+							class="glyphicon glyphicon-arrow-down" aria-hidden="true"
 								style="padding: 10px;"></span>Baja</a></li>
 						<li><a href="#"><span class="glyphicon glyphicon-retweet"
 								aria-hidden="true" style="padding: 10px;"></span>Modificacion</a></li>
@@ -148,16 +147,16 @@
 	<br>
 	<br>
 	<br>
-	    	<!-- jQuery Version 1.11.1 -->
-	<script src="js/jquery.js"></script>
-	<script src="js/main.js"></script>
-	<!-- Bootstrap Core JavaScript -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Bootstrap Core JavaScript -->
+	 
 	<!-- /.container -->
 	  <%} else{%>
 	  <%@include file="error.html" %>
 	  <%}%>
+	  <!-- jQuery Version 1.11.1 -->
+	<script src="js/jquery.js"></script>
+	<script src="js/main.js"></script>
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
 </body>
 <footer></footer>
 </html>
