@@ -5,7 +5,7 @@
 <html lang="en">
 
 <head>
-<meta charset="utf-8">
+  <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
@@ -31,15 +31,19 @@
 		Personal pe = new Personal (); 
 		pe = (Personal)session.getAttribute("Usuario"); %>
 	<%@include file="nav-bar.jsp"%>
-
+	
 	<!-- Page Content -->
 	<div class="container">
 
 		<div class="row center-block">
 			<h2 class="bienvenida">Bienvenido <%= pe.getNombre() %> </h2>
-			<h3>Seleccione la accion que desea realizar</h3>
-			<!-- Contenedor -->
-			<ul id="accordion" class="accordion color">
+			<hr>
+			<!-- <p style="font-family:sans-serif; font-size:30px; text-align:center; color:#982525;">Seleccione la accion que desea realizar</p> -->
+			<div class="row center-block" style=" width:auto; margin:30px;;">
+				<div class="panel panel-danger">
+				  <div class="panel-heading"><h3 class="panel-title">Seleccione la acción que desea realizar</h3></div>
+				  <div class="panel-body">
+				    <ul id="accordion" class="accordion color">
 				<li>
 					<div class="link">
 						<i class="fa fa-database" aria-hidden="true"></i>Viaje<i
@@ -82,7 +86,7 @@
 					<ul class="submenu">
 						<li><a href="altaPersonal.jsp"><span
 								class="glyphicon glyphicon-arrow-up" aria-hidden="true"
-								style="padding: 10px;"></span>Alta</a></li>
+								style="padding:10px;"></span>Alta</a></li>
 						<li><a href="#"><span 
 							class="glyphicon glyphicon-arrow-down" aria-hidden="true"
 								style="padding: 10px;"></span>Baja</a></li>
@@ -140,8 +144,14 @@
 					</ul>
 				</li>
 			</ul>
+				  </div>
+				</div>
+				
+			
+			<!-- Contenedor -->
+			
 		</div>
-
+	</div>
 	</div>
 	<!-- /.row -->
 	<br>

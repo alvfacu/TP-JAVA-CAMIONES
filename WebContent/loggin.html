@@ -23,16 +23,21 @@
 
 <body>
 
-  
+  <!-- Inicio barra de navegaciÃ³n -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+     <a class="navbar-brand" href="index.jsp">SysTruck</a>
+    </div>
+    </nav>
   
     <div class="container">
-        <hr>
+        
         <div class="row">
             <div class="col-lg-4">
             </div>
 
     <!--Loggin-->   
-    <div class="col-lg-4">
+    <div class="col-lg-4" style="margin-top:40px; text-align:center;">
                 <form action="Loggin" class="form-signin" method="POST">
 
                     <h2 class= "alinearh2"><strong>Ingresar</strong></h2>
@@ -43,7 +48,7 @@
                     <label for="inputPassword" class="sr-only">Contraseña</label>
                     <input name="pass" type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required autofocus>
                     <br>  
-                    <button name="loggin" class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button><br>
+                    <button style=" margin: 0 auto;"  name="loggin" class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button><br>
                     <a href="">Olvidé mi contraseña</a><br>
                     <a href="signUp.html">Aún no estoy registrado</a>
                 </form> 

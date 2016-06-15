@@ -3147,7 +3147,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary {
     padding: 7px;
     color: #fff;
-    background-color:#823332;
+    background-color:#7f7c7c;
     border-color: #99C5C3;
 
 }
@@ -3531,11 +3531,11 @@ fieldset[disabled] .btn-link:focus {
   border-radius: 3px;
 }
 .btn-block {
-  margin:10px;
-  padding:10px;
+  margin:0px auto;
+  padding:5px;
   display: block;
   vertical-align: baseline;
-
+  height: 40px;
 }
 .btn-block + .btn-block {
   margin-top: 5px;

@@ -1,7 +1,8 @@
- <html lang="en">
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -37,7 +38,7 @@
     <!-- Aca va lo que se depliega del menu cuando se hace responsive -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav" style="font-size:20px; padding:5px;">
-        <li class="active"><a href="index.jsp"><i class="fa fa-home"></i>&nbsp Inicio<span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="index.jsp"><i class="fa fa-home"></i> &nbsp Inicio<span class="sr-only">(current)</span></a></li>
           <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
            aria-haspopup="true" aria-expanded="false">Viajes <span class="caret"></span></a>

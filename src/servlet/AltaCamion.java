@@ -41,6 +41,7 @@ public class AltaCamion extends HttpServlet {
 		String patente = request.getParameter("patente");
 		if(!(new ControladorCamion().existePatente(request.getParameter("patente"))))
 		{
+			patente = patente.toUpperCase();
 			String marca = request.getParameter("marca");
 			String modelo = request.getParameter("modelo");
 			String descripcion = request.getParameter("descripcion");

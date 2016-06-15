@@ -44,8 +44,7 @@ h1 a {
 
  .accordion {
  	font-size: 18px;
- 	width: 100%;
- 	max-width: 360px;
+ 	
  	margin: 30px auto 20px;
  	background: #eae4e4;
  	-webkit-border-radius: 4px;
