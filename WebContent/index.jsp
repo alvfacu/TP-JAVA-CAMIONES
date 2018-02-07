@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -160,7 +157,7 @@
 	 
 	<!-- /.container -->
 	  <%} else{%>
-	  <%@include file="error.html" %>
+	  <%@include file="loggin.html" %>
 	  <%}%>
 	  <!-- jQuery Version 1.11.1 -->
 	<script src="js/jquery.js"></script>

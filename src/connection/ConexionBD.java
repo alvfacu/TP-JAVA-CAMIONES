@@ -21,7 +21,7 @@ public class ConexionBD {
 	
 	private static String dbUrl="jdbc:mysql://localhost:3306/sistema_camiones";
 	private static String dbUser="root";
-	private static String dbPassword="root";
+	private static String dbPassword="";
 	
 	private ConexionBD(){}
 	
